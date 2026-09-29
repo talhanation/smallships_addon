@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "id": "smallships_addon",
+  "version": "${version}",
+  "name": "SmallShips Addon Example",
+  "description": "Reference addon for SmallShips: adds the Crayer without any change to the main mod.",
+  "license": "MIT",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.talhanation.smallshipsaddon.fabric.SmallShipsAddonFabric"
+    ],
+    "client": [
+      "com.talhanation.smallshipsaddon.fabric.client.SmallShipsAddonFabricClient"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=0.15.0",
+    "minecraft": "~1.21",
+    "java": ">=21",
+    "smallships": "*",
+    "architectury": ">=13.0.0",
+    "forgeconfigapiport": "*"
+  }
+}
