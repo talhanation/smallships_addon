@@ -1,0 +1,9 @@
+{
+  "build_time": 1600,
+  "ingredients": [
+    { "tag": "minecraft:planks", "count": 64 },
+    { "item": "minecraft:white_wool", "count": 16 },
+    { "item": "minecraft:string", "count": 32 },
+    { "item": "minecraft:iron_nugget", "count": 6 }
+  ]
+}

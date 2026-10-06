@@ -3,23 +3,23 @@
   "id": "smallships_addon",
   "version": "${version}",
   "name": "SmallShips Addon Example",
-  "description": "Reference addon for SmallShips: adds the Crayer without any change to the main mod.",
+  "description": "Reference addon for SmallShips: adds the Early Cog without any change to the main mod.",
   "license": "MIT",
   "environment": "*",
   "entrypoints": {
     "main": [
-      "com.talhanation.smallshipsaddon.fabric.SmallShipsAddonFabric"
+      "com.talhanation.smallships_addon.fabric.SmallShipsAddonFabric"
     ],
     "client": [
-      "com.talhanation.smallshipsaddon.fabric.client.SmallShipsAddonFabricClient"
+      "com.talhanation.smallships_addon.fabric.client.SmallShipsAddonFabricClient"
     ]
   },
   "depends": {
     "fabricloader": ">=0.15.0",
-    "minecraft": "~1.21",
-    "java": ">=21",
+    "minecraft": "~1.20.1",
+    "java": ">=17",
     "smallships": "*",
-    "architectury": ">=13.0.0",
+    "architectury": ">=9.0.0",
     "forgeconfigapiport": "*"
   }
 }

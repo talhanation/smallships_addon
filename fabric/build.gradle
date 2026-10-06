@@ -37,6 +37,8 @@ dependencies {
     modImplementation "net.fabricmc:fabric-loader:${rootProject.fabric_loader_version}"
     modApi "net.fabricmc.fabric-api:fabric-api:${rootProject.fabric_api_version}"
 
+    modImplementation "com.talhanation:smallships-fabric:${rootProject.smallships_version}"
+
     modImplementation "com.terraformersmc:modmenu:${rootProject.modmenu_version}"
 //    modImplementation "curse.maven:configured-fabric-667378:4441611" //needs update
 
@@ -96,6 +98,6 @@ publishing {
 
     // See https://docs.gradle.org/current/userguide/publishing_maven.html for information on how to set up publishing.
     repositories {
-        // Add repositories to publish to here.
+        mavenLocal()
     }
 }

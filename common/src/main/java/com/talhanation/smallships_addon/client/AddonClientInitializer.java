@@ -1,30 +1,33 @@
-package com.talhanation.smallshipsaddon.client;
+package com.talhanation.smallships_addon.client;
 
 import com.talhanation.smallships.api.client.ShipRenderRegistry;
-import com.talhanation.smallshipsaddon.client.model.sail.CrayerSailModel;
-import com.talhanation.smallshipsaddon.client.model.sail.SaettiaSailModel;
-import com.talhanation.smallshipsaddon.world.entity.ship.CrayerEntity;
-import com.talhanation.smallshipsaddon.world.entity.ship.SaettiaEntity;
+import com.talhanation.smallships_addon.client.model.sail.EarlyCogSailModel;
+import com.talhanation.smallships_addon.client.model.sail.EarlyCaravelSailModel;
+import com.talhanation.smallships_addon.client.model.sail.FishingBoatSailModel;
+import com.talhanation.smallships_addon.client.model.sail.banner.*;
+import com.talhanation.smallships_addon.world.entity.ship.EarlyCogEntity;
+import com.talhanation.smallships_addon.world.entity.ship.EarlyCaravelEntity;
+import com.talhanation.smallships_addon.world.entity.ship.FishingBoatEntity;
 
 /**
- * Shared client init. These layers are the ONLY thing the main mod needs from
- * an addon on the client - the shared ShipRenderer looks them up by ship class,
- * and every one of them is optional: a ship without a registered model simply
- * gets no such layer instead of crashing the renderer.
+ * Client side hooks into the main mod. The shared ShipRenderer looks these up by
+ * ship class; every layer is optional, a ship without one simply renders
+ * without it (the Rowing Boat has no sail).
  *
- * <ul>
- * <li>{@code registerSail} - the sail, dyed and torn by the sail damage state</li>
- * <li>{@code registerSailBanner} - a banner projected onto the sail cloth</li>
- * <li>{@code registerMastBanner} - a flag flying from the mast</li>
- * </ul>
- *
- * Neither ship here carries a banner model. Both would extend SailBannerModel
- * respectively MastBannerModel and follow the segment conventions documented
- * there.
+ * Entity renderers and model layers are registered in the loader modules
+ * (forge ClientModBus / fabric client entry point), not here.
  */
 public class AddonClientInitializer {
     public static void init() {
-        ShipRenderRegistry.registerSail(CrayerEntity.class, new CrayerSailModel());
-        ShipRenderRegistry.registerSail(SaettiaEntity.class, new SaettiaSailModel());
+        // also available: registerSailBanner / registerMastBanner
+        ShipRenderRegistry.registerSail(EarlyCogEntity.class, new EarlyCogSailModel());
+        ShipRenderRegistry.registerSail(EarlyCaravelEntity.class, new EarlyCaravelSailModel());
+        ShipRenderRegistry.registerSail(FishingBoatEntity.class, new FishingBoatSailModel());
+
+        ShipRenderRegistry.registerSailBanner(EarlyCogEntity.class, new EarlyCogSailBannerModel());
+        ShipRenderRegistry.registerMastBanner(EarlyCogEntity.class, new EarlyCogMastBannerModel());
+
+        ShipRenderRegistry.registerSailBanner(EarlyCaravelEntity.class, new EarlyCaravelSailBannerModel());
+        ShipRenderRegistry.registerMastBanner(EarlyCaravelEntity.class, new EarlyCaravelMastBannerModel());
     }
 }
