@@ -540,6 +540,11 @@ public class FishingBoatModel extends ShipModel<FishingBoatEntity> {
 	public void setupAnim(@NotNull FishingBoatEntity fishingBoat, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
 		this.net_out.visible = fishingBoat.isNetOut();
 		this.net_in.visible = !this.net_out.visible;
+
+		this.chest_1.visible = fishingBoat.getInvFillState() >= 33;
+		this.chest_2.visible = fishingBoat.getInvFillState() >= 66;
+
+		this.steer.yRot = -fishingBoat.getRotSpeed() * 0.15F;
 	}
 
 	@Override

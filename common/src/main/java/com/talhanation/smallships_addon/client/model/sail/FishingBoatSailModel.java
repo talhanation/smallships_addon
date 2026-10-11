@@ -324,6 +324,8 @@ public class FishingBoatSailModel extends SailModel {
 		this.sail_rope_2.visible = state == 2;
 		this.sail_rope_3.visible = state == 3;
 		this.sail_rope_4.visible = state == 4;
+
+
 	}
 
 
