@@ -4,7 +4,6 @@ import com.talhanation.smallships_addon.config.AddonConfig;
 import com.talhanation.smallships_addon.network.AddonPackets;
 import com.talhanation.smallships_addon.world.entity.AddonEntityTypes;
 import com.talhanation.smallships_addon.world.entity.ship.AddonShipTypes;
-import com.talhanation.smallships_addon.world.item.AddonItems;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -23,13 +22,15 @@ public class SmallShipsAddonMod {
 
     /**
      * Shared init, called from both loader entry points once the configs are
-     * loaded. Order matters: entity types, then items, then the ship types that
-     * reference both. The packets depend on none of them.
+     * loaded. Order matters: entity types, then the ship types that reference
+     * them. The packets depend on none of them.
+     *
+     * The ship ITEMS are not in here: they are registered earlier, from the
+     * loader entry points - see AddonItems.
      */
     public static void init() {
         AddonPackets.registerPackets();
         AddonEntityTypes.init();
-        AddonItems.init();
         AddonShipTypes.init();
     }
 }

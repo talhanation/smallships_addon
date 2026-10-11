@@ -39,9 +39,6 @@ public class FishingBoatModel extends ShipModel<FishingBoatEntity> {
 	private final ModelPart net_out_3;
 	private final ModelPart net_out_4;
 	private final ModelPart net_in;
-	private final ModelPart net_in_out;
-	private final ModelPart net_in_top;
-	private final ModelPart net_in_in;
 	private final ModelPart net_in_under_out;
 	private final ModelPart net_in_under_top;
 	private final ModelPart net_in_under_in;
@@ -74,9 +71,6 @@ public class FishingBoatModel extends ShipModel<FishingBoatEntity> {
 		this.net_out_3 = this.net_out_2.getChild("net_out_3");
 		this.net_out_4 = this.net_out_3.getChild("net_out_4");
 		this.net_in = this.FishingBoat.getChild("net_in");
-		this.net_in_out = this.net_in.getChild("net_in_out");
-		this.net_in_top = this.net_in.getChild("net_in_top");
-		this.net_in_in = this.net_in.getChild("net_in_in");
 		this.net_in_under_out = this.net_in.getChild("net_in_under_out");
 		this.net_in_under_top = this.net_in.getChild("net_in_under_top");
 		this.net_in_under_in = this.net_in.getChild("net_in_under_in");
@@ -86,9 +80,9 @@ public class FishingBoatModel extends ShipModel<FishingBoatEntity> {
 		MeshDefinition meshdefinition = new MeshDefinition();
 		PartDefinition partdefinition = meshdefinition.getRoot();
 
-		PartDefinition FishingBoat = partdefinition.addOrReplaceChild("FishingBoat", CubeListBuilder.create(), PartPose.offset(-0.4929F, 23.0357F, -1.35F));
+		PartDefinition FishingBoat = partdefinition.addOrReplaceChild("FishingBoat", CubeListBuilder.create(), PartPose.offset(-0.4929F, 23.0357F, 0.65F));
 
-		PartDefinition deck = FishingBoat.addOrReplaceChild("deck", CubeListBuilder.create(), PartPose.offset(17.4929F, 0.9643F, 8.35F));
+		PartDefinition deck = FishingBoat.addOrReplaceChild("deck", CubeListBuilder.create(), PartPose.offset(17.4929F, 0.9643F, 4.35F));
 
 		PartDefinition cube_r1 = deck.addOrReplaceChild("cube_r1", CubeListBuilder.create().texOffs(16, 0).addBox(-24.0F, -5.0F, 3.0F, 20.0F, 11.0F, 3.0F, new CubeDeformation(0.0F))
 				.texOffs(6, 0).addBox(-4.0F, -5.0F, 3.0F, 22.0F, 11.0F, 3.0F, new CubeDeformation(0.0F))
@@ -108,7 +102,7 @@ public class FishingBoatModel extends ShipModel<FishingBoatEntity> {
 				.texOffs(18, 36).addBox(-24.0F, -11.0F, -19.0F, 8.0F, 6.0F, 3.0F, new CubeDeformation(0.0F))
 				.texOffs(10, 36).addBox(-16.0F, -12.0F, 6.0F, 16.0F, 6.0F, 3.0F, new CubeDeformation(0.0F))
 				.texOffs(18, 36).addBox(-24.0F, -12.0F, 6.0F, 8.0F, 6.0F, 3.0F, new CubeDeformation(0.0F))
-				.texOffs(8, 36).addBox(0.0F, -12.0F, 6.0F, 18.0F, 6.0F, 3.0F, new CubeDeformation(0.0F)), PartPose.offset(3.4929F, 0.9643F, 8.35F));
+				.texOffs(8, 36).addBox(0.0F, -12.0F, 6.0F, 18.0F, 6.0F, 3.0F, new CubeDeformation(0.0F)), PartPose.offset(3.4929F, 0.9643F, 4.35F));
 
 		PartDefinition back = sides.addOrReplaceChild("back", CubeListBuilder.create(), PartPose.offset(-6.0F, 0.0F, 0.0F));
 
@@ -153,7 +147,7 @@ public class FishingBoatModel extends ShipModel<FishingBoatEntity> {
 
 		PartDefinition cube_r6_r3 = cube_r12.addOrReplaceChild("cube_r6_r3", CubeListBuilder.create().texOffs(4, 4).mirror().addBox(-3.3015F, -3.0F, 2.2101F, 8.0F, 7.0F, 3.0F, new CubeDeformation(0.0F)).mirror(false), PartPose.offsetAndRotation(-27.7F, -5.5F, -5.2F, 0.0F, 0.3491F, 0.0F));
 
-		PartDefinition chest_1 = FishingBoat.addOrReplaceChild("chest_1", CubeListBuilder.create(), PartPose.offsetAndRotation(-7.4571F, -7.2857F, 13.9F, 0.0F, 3.1416F, 0.0F));
+		PartDefinition chest_1 = FishingBoat.addOrReplaceChild("chest_1", CubeListBuilder.create(), PartPose.offsetAndRotation(-7.4571F, -7.2857F, 9.9F, 0.0F, 3.1416F, 0.0F));
 
 		PartDefinition chest_1_r1 = chest_1.addOrReplaceChild("chest_1_r1", CubeListBuilder.create().texOffs(96, 38).addBox(-13.0F, -4.0F, -12.0F, 8.0F, 8.0F, 8.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(9.65F, -1.75F, 22.25F, 0.0F, -1.5708F, 0.0F));
 
@@ -163,7 +157,7 @@ public class FishingBoatModel extends ShipModel<FishingBoatEntity> {
 
 		PartDefinition cube_r9 = chest_1.addOrReplaceChild("cube_r9", CubeListBuilder.create().texOffs(30, 55).addBox(59.0F, -19.0F, -9.0F, 4.0F, 5.0F, 4.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(3.65F, 16.25F, -52.75F, 0.0F, -1.5708F, 0.0F));
 
-		PartDefinition chest_2 = FishingBoat.addOrReplaceChild("chest_2", CubeListBuilder.create(), PartPose.offset(-45.5071F, -14.5357F, 23.35F));
+		PartDefinition chest_2 = FishingBoat.addOrReplaceChild("chest_2", CubeListBuilder.create(), PartPose.offset(-45.5071F, -14.5357F, 19.35F));
 
 		PartDefinition cube_r15 = chest_2.addOrReplaceChild("cube_r15", CubeListBuilder.create().texOffs(30, 55).addBox(35.0F, -18.0F, -56.0F, 4.0F, 3.0F, 4.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(12.0F, 24.5F, -57.0F, 0.0F, -1.5708F, 0.0F));
 
@@ -171,7 +165,7 @@ public class FishingBoatModel extends ShipModel<FishingBoatEntity> {
 
 		PartDefinition cube_r16_r1 = cube_r16.addOrReplaceChild("cube_r16_r1", CubeListBuilder.create().texOffs(96, 38).addBox(4.0F, -4.0F, -4.0F, 8.0F, 8.0F, 8.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(-69.0F, -1.0F, 15.5F, 0.0F, 1.5708F, 0.0F));
 
-		PartDefinition mast = FishingBoat.addOrReplaceChild("mast", CubeListBuilder.create(), PartPose.offsetAndRotation(0.4929F, -5.2296F, 3.35F, 0.0F, 1.5708F, 0.0F));
+		PartDefinition mast = FishingBoat.addOrReplaceChild("mast", CubeListBuilder.create(), PartPose.offsetAndRotation(0.4929F, -5.2296F, -0.65F, 0.0F, 1.5708F, 0.0F));
 
 		PartDefinition cube_r2 = mast.addOrReplaceChild("cube_r2", CubeListBuilder.create().texOffs(0, 47).addBox(-11.7387F, -5.6338F, -5.4179F, 5.3726F, 2.0F, 2.0F, new CubeDeformation(0.0F))
 				.texOffs(0, 47).addBox(-6.3662F, -5.6338F, -5.4179F, 7.0F, 2.0F, 2.0F, new CubeDeformation(0.0F))
@@ -194,13 +188,13 @@ public class FishingBoatModel extends ShipModel<FishingBoatEntity> {
 
 		PartDefinition steer = FishingBoat.addOrReplaceChild("steer", CubeListBuilder.create().texOffs(4, 1).addBox(2.75F, 9.0F, -1.0F, 4.0F, 7.0F, 2.0F, new CubeDeformation(0.0F))
 				.texOffs(4, 1).addBox(0.75F, 10.0F, -1.0F, 2.0F, 6.0F, 2.0F, new CubeDeformation(0.0F))
-				.texOffs(4, 1).addBox(0.75F, -1.0F, -1.0F, 2.0F, 11.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offset(41.9929F, -10.0357F, 3.35F));
+				.texOffs(4, 1).addBox(0.75F, -1.0F, -1.0F, 2.0F, 11.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offset(41.9929F, -10.0357F, -0.65F));
 
 		PartDefinition row = steer.addOrReplaceChild("row", CubeListBuilder.create(), PartPose.offsetAndRotation(45.0F, 0.0F, -2.0F, 0.0F, 1.5708F, 0.0F));
 
 		PartDefinition cube_r14 = row.addOrReplaceChild("cube_r14", CubeListBuilder.create().texOffs(9, 0).addBox(-6.0F, -43.5F, 8.0F, 1.0F, 11.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(3.5F, 8.0F, -10.0F, 1.5708F, 0.0F, 0.0F));
 
-		PartDefinition net_out = FishingBoat.addOrReplaceChild("net_out", CubeListBuilder.create(), PartPose.offset(15.4929F, -6.0357F, -11.65F));
+		PartDefinition net_out = FishingBoat.addOrReplaceChild("net_out", CubeListBuilder.create(), PartPose.offset(15.4929F, -6.0357F, -15.65F));
 
 		PartDefinition sides_r4 = net_out.addOrReplaceChild("sides_r4", CubeListBuilder.create().texOffs(6, 36).addBox(-11.0F, -1.0F, -1.5F, 12.0F, 2.0F, 3.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(-14.0F, -4.0F, -14.5F, 0.0F, -1.5708F, 0.0F));
 
@@ -392,266 +386,156 @@ public class FishingBoatModel extends ShipModel<FishingBoatEntity> {
 				.texOffs(111, -1).addBox(-0.5F, 1.6F, 6.6F, 1.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
 				.texOffs(111, -2).addBox(0.0F, 2.0F, -11.0F, 0.0F, 1.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, 4.0F, 0.0F, 0.0F, 0.0F, 0.1745F));
 
-		PartDefinition net_in = FishingBoat.addOrReplaceChild("net_in", CubeListBuilder.create(), PartPose.offset(1.4929F, -10.6357F, -11.65F));
+		PartDefinition net_in = FishingBoat.addOrReplaceChild("net_in", CubeListBuilder.create(), PartPose.offset(1.4929F, -10.6357F, -15.65F));
 
-		PartDefinition net_in_out = net_in.addOrReplaceChild("net_in_out", CubeListBuilder.create().texOffs(111, 0).addBox(9.5F, 5.0F, 0.0F, 3.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(111, 0).addBox(-2.5F, 5.0F, 0.0F, 3.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(112, 0).addBox(-12.5F, 5.0F, 0.0F, 1.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(112, 0).addBox(11.5F, 4.0F, 0.0F, 1.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(111, 0).addBox(7.5F, 4.0F, 0.0F, 3.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(111, 0).addBox(3.5F, 4.0F, 0.0F, 3.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(111, 0).addBox(-0.5F, 4.0F, 0.0F, 3.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(111, 0).addBox(-4.5F, 4.0F, 0.0F, 3.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(111, 0).addBox(-8.5F, 4.0F, 0.0F, 3.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(111, 0).addBox(-12.5F, 4.0F, 0.0F, 3.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(111, 0).addBox(9.5F, 3.0F, 0.0F, 3.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(111, 0).addBox(5.5F, 3.0F, 0.0F, 3.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(111, 0).addBox(1.5F, 3.0F, 0.0F, 3.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(111, 0).addBox(-2.5F, 3.0F, 0.0F, 3.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(111, 0).addBox(-6.5F, 3.0F, 0.0F, 3.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(111, 0).addBox(-10.5F, 3.0F, 0.0F, 3.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(112, 0).addBox(-12.5F, 3.0F, 0.0F, 1.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(112, 0).addBox(11.5F, 2.0F, 0.0F, 1.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(111, 0).addBox(7.5F, 2.0F, 0.0F, 3.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(111, 0).addBox(3.5F, 2.0F, 0.0F, 3.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(111, 0).addBox(-0.5F, 2.0F, 0.0F, 3.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(111, 0).addBox(-4.5F, 2.0F, 0.0F, 3.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(111, 0).addBox(-8.5F, 2.0F, 0.0F, 3.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(111, 0).addBox(-12.5F, 2.0F, 0.0F, 3.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(111, 0).addBox(9.5F, 1.0F, 0.0F, 3.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(111, 0).addBox(5.5F, 1.0F, 0.0F, 3.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(111, 0).addBox(1.5F, 1.0F, 0.0F, 3.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(111, 0).addBox(-2.5F, 1.0F, 0.0F, 3.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(111, 0).addBox(-6.5F, 1.0F, 0.0F, 3.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(111, 0).addBox(-10.5F, 1.0F, 0.0F, 3.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(112, 0).addBox(-12.5F, 1.0F, 0.0F, 1.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(112, 0).addBox(11.5F, 0.0F, 0.0F, 1.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(111, 0).addBox(7.5F, 0.0F, 0.0F, 3.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(111, 0).addBox(3.5F, 0.0F, 0.0F, 3.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(111, 0).addBox(-0.5F, 0.0F, 0.0F, 3.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(111, 0).addBox(-4.5F, 0.0F, 0.0F, 3.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(111, 0).addBox(-8.5F, 0.0F, 0.0F, 3.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(111, 0).addBox(-12.5F, 0.0F, 0.0F, 3.0F, 1.0F, 0.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, 0.0F, 0.0F, -0.1047F, 0.0F, 0.0F));
+		PartDefinition net_in_under_out = net_in.addOrReplaceChild("net_in_under_out", CubeListBuilder.create().texOffs(110, -1).addBox(11.0F, 6.0F, 0.0F, 2.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
+				.texOffs(110, -1).addBox(8.0F, 6.0F, 0.0F, 2.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
+				.texOffs(110, -1).addBox(5.0F, 6.0F, 0.0F, 2.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
+				.texOffs(110, -1).addBox(2.0F, 6.0F, 0.0F, 2.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
+				.texOffs(110, -1).addBox(-1.0F, 6.0F, 0.0F, 2.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
+				.texOffs(110, -1).addBox(-4.0F, 6.0F, 0.0F, 2.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
+				.texOffs(110, -1).addBox(-7.0F, 6.0F, 0.0F, 2.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
+				.texOffs(110, -1).addBox(-10.0F, 6.0F, 0.0F, 2.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
+				.texOffs(110, -1).addBox(-13.0F, 6.0F, 0.0F, 2.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
+				.texOffs(111, -1).addBox(13.0F, 5.0F, 0.0F, 1.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
+				.texOffs(111, -1).addBox(10.0F, 5.0F, 0.0F, 1.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
+				.texOffs(111, -1).addBox(7.0F, 5.0F, 0.0F, 1.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
+				.texOffs(111, -1).addBox(4.0F, 5.0F, 0.0F, 1.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
+				.texOffs(111, -1).addBox(1.0F, 5.0F, 0.0F, 1.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
+				.texOffs(111, -1).addBox(-2.0F, 5.0F, 0.0F, 1.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
+				.texOffs(111, -1).addBox(-5.0F, 5.0F, 0.0F, 1.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
+				.texOffs(111, -1).addBox(-8.0F, 5.0F, 0.0F, 1.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
+				.texOffs(111, -1).addBox(-11.0F, 5.0F, 0.0F, 1.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
+				.texOffs(111, -1).addBox(-14.0F, 5.0F, 0.0F, 1.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
+				.texOffs(110, -1).addBox(11.0F, 4.0F, 0.0F, 2.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
+				.texOffs(110, -1).addBox(8.0F, 4.0F, 0.0F, 2.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
+				.texOffs(110, -1).addBox(5.0F, 4.0F, 0.0F, 2.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
+				.texOffs(110, -1).addBox(2.0F, 4.0F, 0.0F, 2.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
+				.texOffs(110, -1).addBox(-1.0F, 4.0F, 0.0F, 2.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
+				.texOffs(110, -1).addBox(-4.0F, 4.0F, 0.0F, 2.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
+				.texOffs(110, -1).addBox(-7.0F, 4.0F, 0.0F, 2.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
+				.texOffs(110, -1).addBox(-10.0F, 4.0F, 0.0F, 2.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
+				.texOffs(110, -1).addBox(-13.0F, 4.0F, 0.0F, 2.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
+				.texOffs(111, -1).addBox(13.0F, 3.0F, 0.0F, 1.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
+				.texOffs(111, -1).addBox(10.0F, 3.0F, 0.0F, 1.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
+				.texOffs(111, -1).addBox(7.0F, 3.0F, 0.0F, 1.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
+				.texOffs(111, -1).addBox(4.0F, 3.0F, 0.0F, 1.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
+				.texOffs(111, -1).addBox(1.0F, 3.0F, 0.0F, 1.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
+				.texOffs(111, -1).addBox(-2.0F, 3.0F, 0.0F, 1.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
+				.texOffs(111, -1).addBox(-5.0F, 3.0F, 0.0F, 1.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
+				.texOffs(111, -1).addBox(-8.0F, 3.0F, 0.0F, 1.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
+				.texOffs(111, -1).addBox(-11.0F, 3.0F, 0.0F, 1.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
+				.texOffs(111, -1).addBox(-14.0F, 3.0F, 0.0F, 1.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
+				.texOffs(110, -1).addBox(11.0F, 2.0F, 0.0F, 2.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
+				.texOffs(110, -1).addBox(8.0F, 2.0F, 0.0F, 2.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
+				.texOffs(110, -1).addBox(5.0F, 2.0F, 0.0F, 2.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
+				.texOffs(110, -1).addBox(2.0F, 2.0F, 0.0F, 2.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
+				.texOffs(110, -1).addBox(-1.0F, 2.0F, 0.0F, 2.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
+				.texOffs(110, -1).addBox(-4.0F, 2.0F, 0.0F, 2.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
+				.texOffs(110, -1).addBox(-7.0F, 2.0F, 0.0F, 2.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
+				.texOffs(110, -1).addBox(-10.0F, 2.0F, 0.0F, 2.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
+				.texOffs(110, -1).addBox(-13.0F, 2.0F, 0.0F, 2.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
+				.texOffs(111, -1).addBox(13.0F, 1.0F, 0.0F, 1.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
+				.texOffs(111, -1).addBox(10.0F, 1.0F, 0.0F, 1.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
+				.texOffs(111, -1).addBox(7.0F, 1.0F, 0.0F, 1.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
+				.texOffs(111, -1).addBox(4.0F, 1.0F, 0.0F, 1.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
+				.texOffs(111, -1).addBox(1.0F, 1.0F, 0.0F, 1.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
+				.texOffs(111, -1).addBox(-2.0F, 1.0F, 0.0F, 1.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
+				.texOffs(111, -1).addBox(-5.0F, 1.0F, 0.0F, 1.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
+				.texOffs(111, -1).addBox(-8.0F, 1.0F, 0.0F, 1.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
+				.texOffs(111, -1).addBox(-11.0F, 1.0F, 0.0F, 1.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
+				.texOffs(111, -1).addBox(-14.0F, 1.0F, 0.0F, 1.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
+				.texOffs(110, -1).addBox(11.0F, 0.0F, 0.0F, 2.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
+				.texOffs(110, -1).addBox(8.0F, 0.0F, 0.0F, 2.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
+				.texOffs(110, -1).addBox(5.0F, 0.0F, 0.0F, 2.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
+				.texOffs(110, -1).addBox(2.0F, 0.0F, 0.0F, 2.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
+				.texOffs(110, -1).addBox(-1.0F, 0.0F, 0.0F, 2.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
+				.texOffs(110, -1).addBox(-4.0F, 0.0F, 0.0F, 2.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
+				.texOffs(110, -1).addBox(-7.0F, 0.0F, 0.0F, 2.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
+				.texOffs(110, -1).addBox(-10.0F, 0.0F, 0.0F, 2.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
+				.texOffs(110, -1).addBox(-13.0F, 0.0F, 0.0F, 2.0F, 1.0F, 1.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, 0.55F, 0.95F, -0.0524F, 0.0F, 0.0F));
 
-		PartDefinition net_in_top = net_in.addOrReplaceChild("net_in_top", CubeListBuilder.create().texOffs(111, 0).addBox(9.5F, 0.0F, 0.0F, 3.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(111, 0).addBox(5.5F, 0.0F, 0.0F, 3.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(111, 0).addBox(1.5F, 0.0F, 0.0F, 3.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(111, 0).addBox(-2.5F, 0.0F, 0.0F, 3.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(111, 0).addBox(-6.5F, 0.0F, 0.0F, 3.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(111, 0).addBox(-10.5F, 0.0F, 0.0F, 3.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(112, 0).addBox(-12.5F, 0.0F, 0.0F, 1.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(112, 0).addBox(11.5F, 1.0F, 0.0F, 1.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(111, 0).addBox(7.5F, 1.0F, 0.0F, 3.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(111, 0).addBox(3.5F, 1.0F, 0.0F, 3.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(111, 0).addBox(-0.5F, 1.0F, 0.0F, 3.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(111, 0).addBox(-4.5F, 1.0F, 0.0F, 3.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(111, 0).addBox(-8.5F, 1.0F, 0.0F, 3.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(111, 0).addBox(-12.5F, 1.0F, 0.0F, 3.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(111, 0).addBox(9.5F, 2.0F, 0.0F, 3.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(111, 0).addBox(5.5F, 2.0F, 0.0F, 3.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(111, 0).addBox(1.5F, 2.0F, 0.0F, 3.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(111, 0).addBox(-2.5F, 2.0F, 0.0F, 3.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(111, 0).addBox(-6.5F, 2.0F, 0.0F, 3.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(111, 0).addBox(-10.5F, 2.0F, 0.0F, 3.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(112, 0).addBox(-12.5F, 2.0F, 0.0F, 1.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(112, 0).addBox(11.5F, 3.0F, 0.0F, 1.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(111, 0).addBox(7.5F, 3.0F, 0.0F, 3.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(111, 0).addBox(3.5F, 3.0F, 0.0F, 3.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(111, 0).addBox(-0.5F, 3.0F, 0.0F, 3.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(111, 0).addBox(-4.5F, 3.0F, 0.0F, 3.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(111, 0).addBox(-8.5F, 3.0F, 0.0F, 3.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(111, 0).addBox(-12.5F, 3.0F, 0.0F, 3.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(111, 0).addBox(9.5F, 4.0F, 0.0F, 3.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(111, 0).addBox(5.5F, 4.0F, 0.0F, 3.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(111, 0).addBox(1.5F, 4.0F, 0.0F, 3.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(111, 0).addBox(-2.5F, 4.0F, 0.0F, 3.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(111, 0).addBox(-6.5F, 4.0F, 0.0F, 3.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(111, 0).addBox(-10.5F, 4.0F, 0.0F, 3.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(112, 0).addBox(-12.5F, 4.0F, 0.0F, 1.0F, 1.0F, 0.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, 0.0F, 0.0F, 1.5708F, 0.0F, 0.0F));
+		PartDefinition net_in_under_top = net_in.addOrReplaceChild("net_in_under_top", CubeListBuilder.create().texOffs(111, -1).addBox(13.0F, 0.0F, -1.0F, 1.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
+				.texOffs(111, -1).addBox(10.0F, 0.0F, -1.0F, 1.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
+				.texOffs(111, -1).addBox(7.0F, 0.0F, -1.0F, 1.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
+				.texOffs(111, -1).addBox(4.0F, 0.0F, -1.0F, 1.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
+				.texOffs(111, -1).addBox(1.0F, 0.0F, -1.0F, 1.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
+				.texOffs(111, -1).addBox(-2.0F, 0.0F, -1.0F, 1.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
+				.texOffs(111, -1).addBox(-5.0F, 0.0F, -1.0F, 1.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
+				.texOffs(111, -1).addBox(-8.0F, 0.0F, -1.0F, 1.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
+				.texOffs(111, -1).addBox(-11.0F, 0.0F, -1.0F, 1.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
+				.texOffs(111, -1).addBox(-14.0F, 0.0F, -1.0F, 1.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
+				.texOffs(110, -1).addBox(11.0F, 1.0F, -1.0F, 2.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
+				.texOffs(110, -1).addBox(8.0F, 1.0F, -1.0F, 2.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
+				.texOffs(110, -1).addBox(5.0F, 1.0F, -1.0F, 2.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
+				.texOffs(110, -1).addBox(2.0F, 1.0F, -1.0F, 2.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
+				.texOffs(110, -1).addBox(-1.0F, 1.0F, -1.0F, 2.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
+				.texOffs(110, -1).addBox(-4.0F, 1.0F, -1.0F, 2.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
+				.texOffs(110, -1).addBox(-7.0F, 1.0F, -1.0F, 2.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
+				.texOffs(110, -1).addBox(-10.0F, 1.0F, -1.0F, 2.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
+				.texOffs(110, -1).addBox(-13.0F, 1.0F, -1.0F, 2.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
+				.texOffs(111, -1).addBox(13.0F, 2.0F, -1.0F, 1.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
+				.texOffs(111, -1).addBox(10.0F, 2.0F, -1.0F, 1.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
+				.texOffs(111, -1).addBox(7.0F, 2.0F, -1.0F, 1.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
+				.texOffs(111, -1).addBox(4.0F, 2.0F, -1.0F, 1.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
+				.texOffs(111, -1).addBox(1.0F, 2.0F, -1.0F, 1.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
+				.texOffs(111, -1).addBox(-2.0F, 2.0F, -1.0F, 1.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
+				.texOffs(111, -1).addBox(-5.0F, 2.0F, -1.0F, 1.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
+				.texOffs(111, -1).addBox(-8.0F, 2.0F, -1.0F, 1.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
+				.texOffs(111, -1).addBox(-11.0F, 2.0F, -1.0F, 1.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
+				.texOffs(111, -1).addBox(-14.0F, 2.0F, -1.0F, 1.0F, 1.0F, 1.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, 0.35F, 1.05F, 1.5708F, 0.0F, 0.0F));
 
-		PartDefinition net_in_in = net_in.addOrReplaceChild("net_in_in", CubeListBuilder.create().texOffs(112, 0).addBox(11.5F, 0.0F, 0.0F, 1.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(111, 0).addBox(7.5F, 0.0F, 0.0F, 3.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(111, 0).addBox(3.5F, 0.0F, 0.0F, 3.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(111, 0).addBox(-0.5F, 0.0F, 0.0F, 3.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(111, 0).addBox(-4.5F, 0.0F, 0.0F, 3.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(111, 0).addBox(-8.5F, 0.0F, 0.0F, 3.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(111, 0).addBox(-12.5F, 0.0F, 0.0F, 3.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(111, 0).addBox(9.5F, 1.0F, 0.0F, 3.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(111, 0).addBox(5.5F, 1.0F, 0.0F, 3.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(111, 0).addBox(1.5F, 1.0F, 0.0F, 3.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(111, 0).addBox(-2.5F, 1.0F, 0.0F, 3.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(111, 0).addBox(-6.5F, 1.0F, 0.0F, 3.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(111, 0).addBox(-10.5F, 1.0F, 0.0F, 3.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(112, 0).addBox(-12.5F, 1.0F, 0.0F, 1.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(112, 0).addBox(11.5F, 2.0F, 0.0F, 1.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(111, 0).addBox(7.5F, 2.0F, 0.0F, 3.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(111, 0).addBox(3.5F, 2.0F, 0.0F, 3.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(111, 0).addBox(-0.5F, 2.0F, 0.0F, 3.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(111, 0).addBox(-4.5F, 2.0F, 0.0F, 3.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(111, 0).addBox(-8.5F, 2.0F, 0.0F, 3.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(111, 0).addBox(-12.5F, 2.0F, 0.0F, 3.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(111, 0).addBox(9.5F, 3.0F, 0.0F, 3.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(111, 0).addBox(-2.5F, 3.0F, 0.0F, 3.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(112, 0).addBox(-12.5F, 3.0F, 0.0F, 1.0F, 1.0F, 0.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, 0.0F, 5.0F, 0.1047F, 0.0F, 0.0F));
-
-		PartDefinition net_in_under_out = net_in.addOrReplaceChild("net_in_under_out", CubeListBuilder.create().texOffs(111, 0).addBox(11.0F, 6.0F, 0.0F, 2.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(111, 0).addBox(8.0F, 6.0F, 0.0F, 2.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(111, 0).addBox(5.0F, 6.0F, 0.0F, 2.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(111, 0).addBox(2.0F, 6.0F, 0.0F, 2.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(111, 0).addBox(-1.0F, 6.0F, 0.0F, 2.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(111, 0).addBox(-4.0F, 6.0F, 0.0F, 2.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(111, 0).addBox(-7.0F, 6.0F, 0.0F, 2.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(111, 0).addBox(-10.0F, 6.0F, 0.0F, 2.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(111, 0).addBox(-13.0F, 6.0F, 0.0F, 2.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(112, 0).addBox(13.0F, 5.0F, 0.0F, 1.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(112, 0).addBox(10.0F, 5.0F, 0.0F, 1.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(112, 0).addBox(7.0F, 5.0F, 0.0F, 1.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(112, 0).addBox(4.0F, 5.0F, 0.0F, 1.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(112, 0).addBox(1.0F, 5.0F, 0.0F, 1.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(112, 0).addBox(-2.0F, 5.0F, 0.0F, 1.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(112, 0).addBox(-5.0F, 5.0F, 0.0F, 1.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(112, 0).addBox(-8.0F, 5.0F, 0.0F, 1.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(112, 0).addBox(-11.0F, 5.0F, 0.0F, 1.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(112, 0).addBox(-14.0F, 5.0F, 0.0F, 1.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(111, 0).addBox(11.0F, 4.0F, 0.0F, 2.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(111, 0).addBox(8.0F, 4.0F, 0.0F, 2.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(111, 0).addBox(5.0F, 4.0F, 0.0F, 2.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(111, 0).addBox(2.0F, 4.0F, 0.0F, 2.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(111, 0).addBox(-1.0F, 4.0F, 0.0F, 2.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(111, 0).addBox(-4.0F, 4.0F, 0.0F, 2.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(111, 0).addBox(-7.0F, 4.0F, 0.0F, 2.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(111, 0).addBox(-10.0F, 4.0F, 0.0F, 2.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(111, 0).addBox(-13.0F, 4.0F, 0.0F, 2.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(112, 0).addBox(13.0F, 3.0F, 0.0F, 1.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(112, 0).addBox(10.0F, 3.0F, 0.0F, 1.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(112, 0).addBox(7.0F, 3.0F, 0.0F, 1.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(112, 0).addBox(4.0F, 3.0F, 0.0F, 1.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(112, 0).addBox(1.0F, 3.0F, 0.0F, 1.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(112, 0).addBox(-2.0F, 3.0F, 0.0F, 1.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(112, 0).addBox(-5.0F, 3.0F, 0.0F, 1.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(112, 0).addBox(-8.0F, 3.0F, 0.0F, 1.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(112, 0).addBox(-11.0F, 3.0F, 0.0F, 1.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(112, 0).addBox(-14.0F, 3.0F, 0.0F, 1.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(111, 0).addBox(11.0F, 2.0F, 0.0F, 2.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(111, 0).addBox(8.0F, 2.0F, 0.0F, 2.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(111, 0).addBox(5.0F, 2.0F, 0.0F, 2.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(111, 0).addBox(2.0F, 2.0F, 0.0F, 2.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(111, 0).addBox(-1.0F, 2.0F, 0.0F, 2.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(111, 0).addBox(-4.0F, 2.0F, 0.0F, 2.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(111, 0).addBox(-7.0F, 2.0F, 0.0F, 2.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(111, 0).addBox(-10.0F, 2.0F, 0.0F, 2.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(111, 0).addBox(-13.0F, 2.0F, 0.0F, 2.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(112, 0).addBox(13.0F, 1.0F, 0.0F, 1.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(112, 0).addBox(10.0F, 1.0F, 0.0F, 1.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(112, 0).addBox(7.0F, 1.0F, 0.0F, 1.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(112, 0).addBox(4.0F, 1.0F, 0.0F, 1.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(112, 0).addBox(1.0F, 1.0F, 0.0F, 1.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(112, 0).addBox(-2.0F, 1.0F, 0.0F, 1.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(112, 0).addBox(-5.0F, 1.0F, 0.0F, 1.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(112, 0).addBox(-8.0F, 1.0F, 0.0F, 1.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(112, 0).addBox(-11.0F, 1.0F, 0.0F, 1.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(112, 0).addBox(-14.0F, 1.0F, 0.0F, 1.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(111, 0).addBox(11.0F, 0.0F, 0.0F, 2.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(111, 0).addBox(8.0F, 0.0F, 0.0F, 2.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(111, 0).addBox(5.0F, 0.0F, 0.0F, 2.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(111, 0).addBox(2.0F, 0.0F, 0.0F, 2.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(111, 0).addBox(-1.0F, 0.0F, 0.0F, 2.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(111, 0).addBox(-4.0F, 0.0F, 0.0F, 2.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(111, 0).addBox(-7.0F, 0.0F, 0.0F, 2.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(111, 0).addBox(-10.0F, 0.0F, 0.0F, 2.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(111, 0).addBox(-13.0F, 0.0F, 0.0F, 2.0F, 1.0F, 0.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, 0.35F, 0.5F, -0.0524F, 0.0F, 0.0F));
-
-		PartDefinition net_in_under_top = net_in.addOrReplaceChild("net_in_under_top", CubeListBuilder.create().texOffs(112, 0).addBox(13.0F, 0.0F, 0.0F, 1.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(112, 0).addBox(10.0F, 0.0F, 0.0F, 1.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(112, 0).addBox(7.0F, 0.0F, 0.0F, 1.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(112, 0).addBox(4.0F, 0.0F, 0.0F, 1.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(112, 0).addBox(1.0F, 0.0F, 0.0F, 1.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(112, 0).addBox(-2.0F, 0.0F, 0.0F, 1.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(112, 0).addBox(-5.0F, 0.0F, 0.0F, 1.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(112, 0).addBox(-8.0F, 0.0F, 0.0F, 1.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(112, 0).addBox(-11.0F, 0.0F, 0.0F, 1.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(112, 0).addBox(-14.0F, 0.0F, 0.0F, 1.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(111, 0).addBox(11.0F, 1.0F, 0.0F, 2.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(111, 0).addBox(8.0F, 1.0F, 0.0F, 2.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(111, 0).addBox(5.0F, 1.0F, 0.0F, 2.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(111, 0).addBox(2.0F, 1.0F, 0.0F, 2.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(111, 0).addBox(-1.0F, 1.0F, 0.0F, 2.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(111, 0).addBox(-4.0F, 1.0F, 0.0F, 2.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(111, 0).addBox(-7.0F, 1.0F, 0.0F, 2.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(111, 0).addBox(-10.0F, 1.0F, 0.0F, 2.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(111, 0).addBox(-13.0F, 1.0F, 0.0F, 2.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(112, 0).addBox(13.0F, 2.0F, 0.0F, 1.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(112, 0).addBox(10.0F, 2.0F, 0.0F, 1.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(112, 0).addBox(7.0F, 2.0F, 0.0F, 1.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(112, 0).addBox(4.0F, 2.0F, 0.0F, 1.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(112, 0).addBox(1.0F, 2.0F, 0.0F, 1.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(112, 0).addBox(-2.0F, 2.0F, 0.0F, 1.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(112, 0).addBox(-5.0F, 2.0F, 0.0F, 1.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(112, 0).addBox(-8.0F, 2.0F, 0.0F, 1.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(112, 0).addBox(-11.0F, 2.0F, 0.0F, 1.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(112, 0).addBox(-14.0F, 2.0F, 0.0F, 1.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(111, 0).addBox(11.0F, 3.0F, 0.0F, 2.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(111, 0).addBox(8.0F, 3.0F, 0.0F, 2.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(111, 0).addBox(5.0F, 3.0F, 0.0F, 2.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(111, 0).addBox(2.0F, 3.0F, 0.0F, 2.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(111, 0).addBox(-1.0F, 3.0F, 0.0F, 2.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(111, 0).addBox(-4.0F, 3.0F, 0.0F, 2.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(111, 0).addBox(-7.0F, 3.0F, 0.0F, 2.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(111, 0).addBox(-10.0F, 3.0F, 0.0F, 2.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(111, 0).addBox(-13.0F, 3.0F, 0.0F, 2.0F, 1.0F, 0.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, 0.35F, 0.5F, 1.5708F, 0.0F, 0.0F));
-
-		PartDefinition net_in_under_in = net_in.addOrReplaceChild("net_in_under_in", CubeListBuilder.create().texOffs(112, 0).addBox(13.0F, 0.0F, 0.0F, 1.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(112, 0).addBox(10.0F, 0.0F, 0.0F, 1.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(112, 0).addBox(7.0F, 0.0F, 0.0F, 1.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(112, 0).addBox(4.0F, 0.0F, 0.0F, 1.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(112, 0).addBox(1.0F, 0.0F, 0.0F, 1.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(112, 0).addBox(-2.0F, 0.0F, 0.0F, 1.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(112, 0).addBox(-5.0F, 0.0F, 0.0F, 1.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(112, 0).addBox(-8.0F, 0.0F, 0.0F, 1.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(112, 0).addBox(-11.0F, 0.0F, 0.0F, 1.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(112, 0).addBox(-14.0F, 0.0F, 0.0F, 1.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(111, 0).addBox(11.0F, 1.0F, 0.0F, 2.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(111, 0).addBox(8.0F, 1.0F, 0.0F, 2.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(111, 0).addBox(5.0F, 1.0F, 0.0F, 2.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(111, 0).addBox(2.0F, 1.0F, 0.0F, 2.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(111, 0).addBox(-1.0F, 1.0F, 0.0F, 2.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(111, 0).addBox(-4.0F, 1.0F, 0.0F, 2.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(111, 0).addBox(-7.0F, 1.0F, 0.0F, 2.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(111, 0).addBox(-10.0F, 1.0F, 0.0F, 2.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(111, 0).addBox(-13.0F, 1.0F, 0.0F, 2.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(112, 0).addBox(13.0F, 2.0F, 0.0F, 1.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(112, 0).addBox(10.0F, 2.0F, 0.0F, 1.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(112, 0).addBox(7.0F, 2.0F, 0.0F, 1.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(112, 0).addBox(4.0F, 2.0F, 0.0F, 1.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(112, 0).addBox(1.0F, 2.0F, 0.0F, 1.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(112, 0).addBox(-2.0F, 2.0F, 0.0F, 1.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(112, 0).addBox(-5.0F, 2.0F, 0.0F, 1.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(112, 0).addBox(-8.0F, 2.0F, 0.0F, 1.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(112, 0).addBox(-11.0F, 2.0F, 0.0F, 1.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(112, 0).addBox(-14.0F, 2.0F, 0.0F, 1.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(111, 0).addBox(11.0F, 3.0F, 0.0F, 2.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(111, 0).addBox(8.0F, 3.0F, 0.0F, 2.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(111, 0).addBox(5.0F, 3.0F, 0.0F, 2.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(111, 0).addBox(2.0F, 3.0F, 0.0F, 2.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(111, 0).addBox(-1.0F, 3.0F, 0.0F, 2.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(111, 0).addBox(-4.0F, 3.0F, 0.0F, 2.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(111, 0).addBox(-7.0F, 3.0F, 0.0F, 2.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(111, 0).addBox(-10.0F, 3.0F, 0.0F, 2.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(111, 0).addBox(-13.0F, 3.0F, 0.0F, 2.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(112, 0).addBox(13.0F, 4.0F, 0.0F, 1.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(112, 0).addBox(10.0F, 4.0F, 0.0F, 1.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(112, 0).addBox(7.0F, 4.0F, 0.0F, 1.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(112, 0).addBox(4.0F, 4.0F, 0.0F, 1.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(112, 0).addBox(1.0F, 4.0F, 0.0F, 1.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(112, 0).addBox(-2.0F, 4.0F, 0.0F, 1.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(112, 0).addBox(-5.0F, 4.0F, 0.0F, 1.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(112, 0).addBox(-8.0F, 4.0F, 0.0F, 1.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(112, 0).addBox(-11.0F, 4.0F, 0.0F, 1.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
-				.texOffs(112, 0).addBox(-14.0F, 4.0F, 0.0F, 1.0F, 1.0F, 0.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, 0.35F, 4.5F, 0.0524F, 0.0F, 0.0F));
+		PartDefinition net_in_under_in = net_in.addOrReplaceChild("net_in_under_in", CubeListBuilder.create().texOffs(111, -1).addBox(13.0F, 0.0F, -1.0F, 1.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
+				.texOffs(111, -1).addBox(10.0F, 0.0F, -1.0F, 1.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
+				.texOffs(111, -1).addBox(7.0F, 0.0F, -1.0F, 1.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
+				.texOffs(111, -1).addBox(4.0F, 0.0F, -1.0F, 1.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
+				.texOffs(111, -1).addBox(1.0F, 0.0F, -1.0F, 1.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
+				.texOffs(111, -1).addBox(-2.0F, 0.0F, -1.0F, 1.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
+				.texOffs(111, -1).addBox(-5.0F, 0.0F, -1.0F, 1.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
+				.texOffs(111, -1).addBox(-8.0F, 0.0F, -1.0F, 1.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
+				.texOffs(111, -1).addBox(-11.0F, 0.0F, -1.0F, 1.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
+				.texOffs(111, -1).addBox(-14.0F, 0.0F, -1.0F, 1.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
+				.texOffs(110, -1).addBox(11.0F, 1.0F, -1.0F, 2.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
+				.texOffs(110, -1).addBox(8.0F, 1.0F, -1.0F, 2.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
+				.texOffs(110, -1).addBox(5.0F, 1.0F, -1.0F, 2.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
+				.texOffs(110, -1).addBox(2.0F, 1.0F, -1.0F, 2.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
+				.texOffs(110, -1).addBox(-1.0F, 1.0F, -1.0F, 2.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
+				.texOffs(110, -1).addBox(-4.0F, 1.0F, -1.0F, 2.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
+				.texOffs(110, -1).addBox(-7.0F, 1.0F, -1.0F, 2.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
+				.texOffs(110, -1).addBox(-10.0F, 1.0F, -1.0F, 2.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
+				.texOffs(110, -1).addBox(-13.0F, 1.0F, -1.0F, 2.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
+				.texOffs(111, -1).addBox(13.0F, 2.0F, -1.0F, 1.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
+				.texOffs(111, -1).addBox(10.0F, 2.0F, -1.0F, 1.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
+				.texOffs(111, -1).addBox(7.0F, 2.0F, -1.0F, 1.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
+				.texOffs(111, -1).addBox(4.0F, 2.0F, -1.0F, 1.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
+				.texOffs(111, -1).addBox(1.0F, 2.0F, -1.0F, 1.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
+				.texOffs(111, -1).addBox(-2.0F, 2.0F, -1.0F, 1.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
+				.texOffs(111, -1).addBox(-5.0F, 2.0F, -1.0F, 1.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
+				.texOffs(111, -1).addBox(-8.0F, 2.0F, -1.0F, 1.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
+				.texOffs(111, -1).addBox(-11.0F, 2.0F, -1.0F, 1.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
+				.texOffs(111, -1).addBox(-14.0F, 2.0F, -1.0F, 1.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
+				.texOffs(110, -1).addBox(11.0F, 3.0F, -1.0F, 2.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
+				.texOffs(110, -1).addBox(8.0F, 3.0F, -1.0F, 2.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
+				.texOffs(110, -1).addBox(5.0F, 3.0F, -1.0F, 2.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
+				.texOffs(110, -1).addBox(2.0F, 3.0F, -1.0F, 2.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
+				.texOffs(110, -1).addBox(-1.0F, 3.0F, -1.0F, 2.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
+				.texOffs(110, -1).addBox(-4.0F, 3.0F, -1.0F, 2.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
+				.texOffs(110, -1).addBox(-7.0F, 3.0F, -1.0F, 2.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
+				.texOffs(110, -1).addBox(-10.0F, 3.0F, -1.0F, 2.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
+				.texOffs(110, -1).addBox(-13.0F, 3.0F, -1.0F, 2.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
+				.texOffs(111, -1).addBox(13.0F, 4.0F, -1.0F, 1.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
+				.texOffs(111, -1).addBox(10.0F, 4.0F, -1.0F, 1.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
+				.texOffs(111, -1).addBox(7.0F, 4.0F, -1.0F, 1.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
+				.texOffs(111, -1).addBox(4.0F, 4.0F, -1.0F, 1.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
+				.texOffs(111, -1).addBox(1.0F, 4.0F, -1.0F, 1.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
+				.texOffs(111, -1).addBox(-2.0F, 4.0F, -1.0F, 1.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
+				.texOffs(111, -1).addBox(-5.0F, 4.0F, -1.0F, 1.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
+				.texOffs(111, -1).addBox(-8.0F, 4.0F, -1.0F, 1.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
+				.texOffs(111, -1).addBox(-11.0F, 4.0F, -1.0F, 1.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
+				.texOffs(111, -1).addBox(-14.0F, 4.0F, -1.0F, 1.0F, 1.0F, 1.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, 0.575F, 4.1F, 0.0524F, 0.0F, 0.0F));
 
 		return LayerDefinition.create(meshdefinition, 128, 64);
 	}
-
 	@Override
 	public void setupAnim(@NotNull FishingBoatEntity fishingBoat, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
 		this.net_out.visible = fishingBoat.isNetOut();

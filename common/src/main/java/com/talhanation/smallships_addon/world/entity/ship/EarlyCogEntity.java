@@ -8,16 +8,12 @@ import com.talhanation.smallships.world.entity.ship.hitbox.ShipPartEntity;
 import com.talhanation.smallships.world.entity.ship.seat.ShipSeat;
 import com.talhanation.smallships_addon.config.AddonConfig;
 import com.talhanation.smallships_addon.world.entity.AddonEntityTypes;
-import com.talhanation.smallships_addon.world.item.AddonItems;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.util.Mth;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.vehicle.Boat;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
-import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
@@ -73,13 +69,6 @@ public class EarlyCogEntity extends ContainerShip implements Bannerable, Sailabl
     }
 
     @Override
-    public @NotNull Item getDropItem() {
-        // respect the main mods' item drop switch
-        if (!SmallShipsConfig.Server.shipGeneralDoItemDrop.get()) return ItemStack.EMPTY.getItem();
-        return AddonItems.EARLY_COG_ITEMS.get(this.getVariant());
-    }
-
-    @Override
     public BiomeModifierType getBiomeModifierType() {
         return AddonConfig.earlyCogBiome.get();
     }
@@ -103,7 +92,7 @@ public class EarlyCogEntity extends ContainerShip implements Bannerable, Sailabl
     /* ---------------- seats ---------------- */
 
     // seats: driver/passenger(id, v, y, h) - ids must be unique, y is on top of the deck
-    private static final float deck = 0.3F;
+    private static final float deck = 0.1F;
     private static final List<ShipSeat> SEATS = List.of(
             ShipSeat.driver(0, -3.0F, deck, 0.0F),
             ShipSeat.passenger(3, -1.8F,deck, 0.7F),
@@ -175,17 +164,22 @@ public class EarlyCogEntity extends ContainerShip implements Bannerable, Sailabl
 
     @Override
     public byte getMaxShieldsPerSide() {
-        return 3;
+        return 5;
     }
 
     private static final List<ShieldPosition> SHIELD_POSITIONS = new ArrayList<>();
 
+    // one pair per planking segment of the hull side (z follows the hull width), from the stern to the bow
     static {
-        SHIELD_POSITIONS.add(new ShieldPosition(2.1, 0.8, -1.0, true));
-        SHIELD_POSITIONS.add(new ShieldPosition(2.1, 0.8, 1.0, false));
-        SHIELD_POSITIONS.add(new ShieldPosition(0.9, 0.8, -1.2, true));
-        SHIELD_POSITIONS.add(new ShieldPosition(0.9, 0.8, 1.2, false));
-        SHIELD_POSITIONS.add(new ShieldPosition(-0.3, 0.8, -1.2, true));
-        SHIELD_POSITIONS.add(new ShieldPosition(-0.3, 0.8, 1.2, false));
+        SHIELD_POSITIONS.add(new ShieldPosition(2.19, 0.8, -1.0, true));
+        SHIELD_POSITIONS.add(new ShieldPosition(2.19, 0.8, 1.0, false));
+        SHIELD_POSITIONS.add(new ShieldPosition(1.44, 0.8, -1.2, true));
+        SHIELD_POSITIONS.add(new ShieldPosition(1.44, 0.8, 1.2, false));
+        SHIELD_POSITIONS.add(new ShieldPosition(0.56, 0.8, -1.4, true));
+        SHIELD_POSITIONS.add(new ShieldPosition(0.56, 0.8, 1.4, false));
+        SHIELD_POSITIONS.add(new ShieldPosition(-0.41, 0.8, -1.2, true));
+        SHIELD_POSITIONS.add(new ShieldPosition(-0.41, 0.8, 1.2, false));
+        SHIELD_POSITIONS.add(new ShieldPosition(-1.28, 0.8, -1.0, true));
+        SHIELD_POSITIONS.add(new ShieldPosition(-1.28, 0.8, 1.0, false));
     }
 }

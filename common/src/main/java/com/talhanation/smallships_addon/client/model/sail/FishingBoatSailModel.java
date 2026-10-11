@@ -148,7 +148,7 @@ public class FishingBoatSailModel extends SailModel {
 		MeshDefinition meshdefinition = new MeshDefinition();
 		PartDefinition partdefinition = meshdefinition.getRoot();
 
-		PartDefinition FishingBoatSail = partdefinition.addOrReplaceChild("FishingBoatSail", CubeListBuilder.create(), PartPose.offsetAndRotation(15.1263F, 6.9197F, 15.0749F, 0.0F, 1.5708F, 0.0F));
+		PartDefinition FishingBoatSail = partdefinition.addOrReplaceChild("FishingBoatSail", CubeListBuilder.create(), PartPose.offsetAndRotation(15.1263F, 6.9197F, 14.075F, 0.0F, 1.5708F, 0.0F));
 
 		PartDefinition sail_rope_0 = FishingBoatSail.addOrReplaceChild("sail_rope_0", CubeListBuilder.create(), PartPose.offsetAndRotation(0.7279F, 5.7946F, 0.2346F, 0.0873F, 0.2122F, 0.0642F));
 
@@ -189,7 +189,7 @@ public class FishingBoatSailModel extends SailModel {
 
 		PartDefinition cube_r25 = sail_rope_2.addOrReplaceChild("cube_r25", CubeListBuilder.create().texOffs(16, 4).addBox(-17.2219F, -17.431F, -1.2881F, 3.0F, 3.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -28.3333F, 0.3333F, 0.0F, 0.0F, -2.3562F));
 
-		PartDefinition sail_rope_3 = FishingBoatSail.addOrReplaceChild("sail_rope_3", CubeListBuilder.create(), PartPose.offsetAndRotation(0.7533F, 6.0008F, 0.2331F, 0.2223F, 0.2344F, 0.1753F));
+		PartDefinition sail_rope_3 = FishingBoatSail.addOrReplaceChild("sail_rope_3", CubeListBuilder.create(), PartPose.offsetAndRotation(0.7533F, 6.0008F, 0.233F, 0.2223F, 0.2344F, 0.1753F));
 
 		PartDefinition cube_r26 = sail_rope_3.addOrReplaceChild("cube_r26", CubeListBuilder.create().texOffs(19, 26).addBox(-6.7399F, -0.6478F, -17.7881F, 7.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
 				.texOffs(4, 24).addBox(10.2601F, -0.6478F, -17.7881F, 6.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
@@ -212,7 +212,7 @@ public class FishingBoatSailModel extends SailModel {
 
 		PartDefinition cube_r40 = sail_rope_4.addOrReplaceChild("cube_r40", CubeListBuilder.create().texOffs(16, 4).addBox(-17.2219F, -17.431F, -1.2881F, 3.0F, 3.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -28.3333F, 0.3333F, 0.0F, 0.0F, -2.3562F));
 
-		PartDefinition sail = FishingBoatSail.addOrReplaceChild("sail", CubeListBuilder.create(), PartPose.offset(7.1313F, -28.3286F, -1.1747F));
+		PartDefinition sail = FishingBoatSail.addOrReplaceChild("sail", CubeListBuilder.create(), PartPose.offset(7.9313F, -28.3286F, -1.1747F));
 
 		PartDefinition sail_4 = sail.addOrReplaceChild("sail_4", CubeListBuilder.create(), PartPose.offsetAndRotation(0.0F, 13.5F, 0.0F, 0.0F, -0.6109F, 0.0F));
 
@@ -305,7 +305,7 @@ public class FishingBoatSailModel extends SailModel {
 
 		PartDefinition cube_r1 = sail_2_0_bundle.addOrReplaceChild("cube_r1", CubeListBuilder.create().texOffs(88, 27).addBox(-7.5886F, -7.6338F, 49.672F, 6.0F, 6.0F, 13.5764F, new CubeDeformation(0.0F))
 				.texOffs(88, 0).addBox(-7.5886F, -7.6338F, 36.0955F, 6.0F, 6.0F, 13.5765F, new CubeDeformation(0.0F))
-				.texOffs(82, 29).addBox(-7.5886F, -7.6338F, 22.5191F, 6.0F, 6.0F, 13.5765F, new CubeDeformation(0.0F))
+				.texOffs(82, 29).addBox(-7.5886F, -7.6338F, 22.5191F, 6.0F, 6.0F, 13.5764F, new CubeDeformation(0.0F))
 				.texOffs(88, 44).addBox(-7.5886F, -7.6338F, 8.9426F, 6.0F, 6.0F, 13.5764F, new CubeDeformation(0.0F))
 				.texOffs(66, 33).addBox(-7.5886F, -7.6338F, -4.6338F, 6.0F, 6.0F, 13.5765F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, 0.0F, 0.0F, 0.7854F, 0.0F, 0.0F));
 

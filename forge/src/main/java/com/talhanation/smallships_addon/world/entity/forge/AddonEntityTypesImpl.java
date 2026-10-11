@@ -34,7 +34,7 @@ public class AddonEntityTypesImpl {
     static {
         entries.put(EarlyCogEntity.class, ENTITY_TYPES.register(EarlyCogEntity.ID,
                 () -> EntityType.Builder.of(EarlyCogEntity::new, MobCategory.MISC)
-                        .sized(3.25F, 1.25F)
+                        .sized(2.8F, 1.25F)
                         .clientTrackingRange(20)
                         .setUpdateInterval(10)
                         .setShouldReceiveVelocityUpdates(true)
@@ -42,7 +42,7 @@ public class AddonEntityTypesImpl {
 
         entries.put(EarlyCaravelEntity.class, ENTITY_TYPES.register(EarlyCaravelEntity.ID,
                 () -> EntityType.Builder.of(EarlyCaravelEntity::new, MobCategory.MISC)
-                        .sized(3.25F, 1.25F)
+                        .sized(2.5F, 1.25F)
                         .clientTrackingRange(20)
                         .setUpdateInterval(10)
                         .setShouldReceiveVelocityUpdates(true)
@@ -58,7 +58,7 @@ public class AddonEntityTypesImpl {
 
         entries.put(FishingBoatEntity.class, ENTITY_TYPES.register(FishingBoatEntity.ID,
                 () -> EntityType.Builder.of(FishingBoatEntity::new, MobCategory.MISC)
-                        .sized(2.25F, 1.25F)
+                        .sized(1.75F, 1.25F)
                         .clientTrackingRange(20)
                         .setUpdateInterval(10)
                         .setShouldReceiveVelocityUpdates(true)

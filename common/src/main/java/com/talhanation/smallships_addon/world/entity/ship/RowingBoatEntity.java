@@ -11,16 +11,12 @@ import com.talhanation.smallships.world.entity.ship.hitbox.ShipPartEntity;
 import com.talhanation.smallships.world.entity.ship.seat.ShipSeat;
 import com.talhanation.smallships_addon.config.AddonConfig;
 import com.talhanation.smallships_addon.world.entity.AddonEntityTypes;
-import com.talhanation.smallships_addon.world.item.AddonItems;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.util.Mth;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.vehicle.Boat;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
-import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
@@ -78,13 +74,6 @@ public class RowingBoatEntity extends ContainerShip implements Seatable, Paddlea
     @Override
     public SmallShipsConfig.ShipAttributes getConfiguredAttributes() {
         return AddonConfig.rowingBoatAttributes;
-    }
-
-    @Override
-    public @NotNull Item getDropItem() {
-        // respect the main mods' item drop switch
-        if (!SmallShipsConfig.Server.shipGeneralDoItemDrop.get()) return ItemStack.EMPTY.getItem();
-        return AddonItems.ROWING_BOAT_ITEMS.get(this.getVariant());
     }
 
     @Override

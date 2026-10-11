@@ -8,16 +8,12 @@ import com.talhanation.smallships.world.entity.ship.hitbox.ShipPartEntity;
 import com.talhanation.smallships.world.entity.ship.seat.ShipSeat;
 import com.talhanation.smallships_addon.config.AddonConfig;
 import com.talhanation.smallships_addon.world.entity.AddonEntityTypes;
-import com.talhanation.smallships_addon.world.item.AddonItems;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.util.Mth;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.vehicle.Boat;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
-import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
@@ -72,13 +68,6 @@ public class EarlyCaravelEntity extends ContainerShip implements Bannerable, Sai
     }
 
     @Override
-    public @NotNull Item getDropItem() {
-        // respect the main mods' item drop switch
-        if (!SmallShipsConfig.Server.shipGeneralDoItemDrop.get()) return ItemStack.EMPTY.getItem();
-        return AddonItems.EARLY_CARAVEL_ITEMS.get(this.getVariant());
-    }
-
-    @Override
     public BiomeModifierType getBiomeModifierType() {
         return AddonConfig.earlyCaravelBiome.get();
     }
@@ -101,19 +90,21 @@ public class EarlyCaravelEntity extends ContainerShip implements Bannerable, Sai
     /* ---------------- seats ---------------- */
 
     // seats: driver/passenger(id, v, y, h) - ids must be unique, y is on top of the deck
-    private static final float deck = 0.3F;
+    private static final float deck = 0.2F;
     private static final List<ShipSeat> SEATS = List.of(
-            ShipSeat.driver(0, -2.3F, deck,0.7F),
-            ShipSeat.passenger(1, -2.3F,deck, -0.7F),
+            ShipSeat.driver(0, -1.75F, deck,0.7F),
+            ShipSeat.passenger(1, -1.75F,deck, -0.7F),
 
-            ShipSeat.passenger(2, -1.3F, deck,0.7F),
-            ShipSeat.passenger(3, -1.3F, deck,-0.7F),
+            ShipSeat.passenger(2, -0.75F, deck,0.7F),
+            ShipSeat.passenger(3, -0.75F, deck,-0.7F),
 
-            ShipSeat.passenger(4, 0.3F,deck, 0.7F),
-            ShipSeat.passenger(5, 0.3F, deck,-0.7F),
+            ShipSeat.passenger(4, 0.25F,deck, 0.7F),
+            ShipSeat.passenger(5, 0.25F, deck,-0.7F),
 
-            ShipSeat.passenger(6, 1.3F, deck,0.7F),
-            ShipSeat.passenger(7, 1.3F, deck,-0.7F)
+            ShipSeat.passenger(6, 1.25F, deck,0.7F),
+            ShipSeat.passenger(7, 1.25F, deck,-0.7F),
+
+            ShipSeat.passenger(8, 2.25F, deck,0.0F)
     );
 
     @Override

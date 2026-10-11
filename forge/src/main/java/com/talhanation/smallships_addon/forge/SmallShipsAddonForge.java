@@ -4,7 +4,7 @@ import com.talhanation.smallships_addon.SmallShipsAddonMod;
 import com.talhanation.smallships_addon.forge.client.ClientModBus;
 import com.talhanation.smallships_addon.forge.events.UpdateEvents;
 import com.talhanation.smallships_addon.world.entity.forge.AddonEntityTypesImpl;
-import com.talhanation.smallships_addon.world.item.forge.AddonItemsImpl;
+import com.talhanation.smallships_addon.world.item.AddonItems;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -33,7 +33,9 @@ public class SmallShipsAddonForge {
         IEventBus modBus = FMLJavaModLoadingContext.get().getModEventBus();
 
         AddonEntityTypesImpl.ENTITY_TYPES.register(modBus);
-        AddonItemsImpl.ITEMS.register(modBus);
+        // the ship items go through SmallShips, and only take them here in the
+        // constructor - see AddonItems
+        AddonItems.register();
 
         modBus.addListener(this::commonSetup);
         DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> () -> modBus.register(new ClientModBus()));

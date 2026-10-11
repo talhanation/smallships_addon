@@ -125,7 +125,7 @@ public class AddonConfig {
 
         builder.comment("Specify biome type for the Early Caravel. Can be NONE, COLD, NEUTRAL, or WARM");
         earlyCaravelBiome = builder
-                .defineEnum("earlyCaravelBiome", Ship.BiomeModifierType.WARM);
+                .defineEnum("earlyCaravelBiome", Ship.BiomeModifierType.NONE);
 
         builder.pop();
         builder.pop();
@@ -186,7 +186,7 @@ public class AddonConfig {
 
         builder.comment("Specify biome type for the Fishing Boat. Can be NONE, COLD, NEUTRAL, or WARM");
         fishingBoatBiome = builder
-                .defineEnum("fishingBoatBiome", Ship.BiomeModifierType.NONE);
+                .defineEnum("fishingBoatBiome", Ship.BiomeModifierType.NEUTRAL);
 
         builder.pop();
 

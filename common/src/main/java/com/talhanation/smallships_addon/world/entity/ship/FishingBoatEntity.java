@@ -11,7 +11,6 @@ import com.talhanation.smallships.world.entity.ship.hitbox.ShipPartEntity;
 import com.talhanation.smallships.world.entity.ship.seat.ShipSeat;
 import com.talhanation.smallships_addon.config.AddonConfig;
 import com.talhanation.smallships_addon.world.entity.AddonEntityTypes;
-import com.talhanation.smallships_addon.world.item.AddonItems;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
@@ -23,7 +22,6 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.vehicle.Boat;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
@@ -155,13 +153,6 @@ public class FishingBoatEntity extends ContainerShip implements Sailable, Seatab
     }
 
     @Override
-    public @NotNull Item getDropItem() {
-        // respect the main mods' item drop switch
-        if (!SmallShipsConfig.Server.shipGeneralDoItemDrop.get()) return ItemStack.EMPTY.getItem();
-        return AddonItems.FISHING_BOAT_ITEMS.get(this.getVariant());
-    }
-
-    @Override
     public BiomeModifierType getBiomeModifierType() {
         return AddonConfig.fishingBoatBiome.get();
     }
@@ -172,7 +163,7 @@ public class FishingBoatEntity extends ContainerShip implements Sailable, Seatab
     private static final List<ShipPartEntity.Definition> PARTS = List.of(
             ShipPartEntity.Definition.hull(-1.75F, 0.0F, 0.0F, 1.75F, 1.25F),//back
             ShipPartEntity.Definition.hull(1.75F, 0.0F, 0.0F, 1.75F, 1.25F),//front
-            ShipPartEntity.Definition.mast(0.0F, 0.0F, 0.30F, 10.75F)//mast
+            ShipPartEntity.Definition.mast(0.0F, 0.0F, 0.30F, 8.0F)//mast
     );
 
     @Override
@@ -183,7 +174,7 @@ public class FishingBoatEntity extends ContainerShip implements Sailable, Seatab
     /* ---------------- seats ---------------- */
 
     // seats: driver/passenger(id, v, y, h) - ids must be unique, y is on top of the deck
-    private static final float deck = 0.3F;
+    private static final float deck = 0.0F;
     private static final List<ShipSeat> SEATS = List.of(
             ShipSeat.driver(0, -1.50F, deck, 0.0F),
             ShipSeat.passenger(1, -0.5F,deck, 0.0F),
@@ -202,7 +193,7 @@ public class FishingBoatEntity extends ContainerShip implements Sailable, Seatab
     // the box the net fishes in, in the same frame as the parts above:
     // hull(v, y, h, width, height). It hangs astern and below the waterline -
     // tune it to where the model draws the net, F3 + B shows it while it is out
-    private static final ShipPartEntity.Definition NET = ShipPartEntity.Definition.hull(0F, -0.50F, -2.0F, 2.5F, 2.5F);
+    private static final ShipPartEntity.Definition NET = ShipPartEntity.Definition.hull(0F, -1.50F, -2.5F, 2.5F, 2.5F);
 
     public boolean isNetOut() {
         return this.getData(NET_OUT);
