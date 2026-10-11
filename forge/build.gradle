@@ -27,7 +27,7 @@ configurations {
 dependencies {
     forge "net.minecraftforge:forge:${rootProject.forge_version}"
 
-    modImplementation "com.talhanation:smallships-forge:${rootProject.smallships_version}"
+    modImplementation "maven.modrinth:${rootProject.smallships_modrinth_id}:${rootProject.smallships_forge_version}"
 
     common(project(path: ":common", configuration: "namedElements")) { transitive false }
     shadowCommon(project(path: ":common", configuration: "transformProductionForge")) { transitive = false }

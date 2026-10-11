@@ -12,7 +12,7 @@ description = '''Offical Addon for SmallShips: adds the Early Cog.'''
 [[dependencies.smallships_addon]]
 modId = "smallships"
 mandatory = true
-versionRange = "[2.0.0,)"
+versionRange = "[2.0.1,)"
 ordering = "AFTER"
 side = "BOTH"
 
