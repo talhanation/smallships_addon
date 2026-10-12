@@ -13,9 +13,9 @@ import com.talhanation.smallships_addon.world.entity.ship.RowingBoatEntity;
  * and so on), finds them again in Ship#getDropItem and puts them into its
  * creative tab. No item classes, no item register per loader.
  *
- * Has to be called EARLY: from the mod constructor on Forge, in onInitialize on
+ * Has to be called EARLY: from the mod constructor on NeoForge, in onInitialize on
  * Fabric - see ShipItems. Not from SmallShipsAddonMod#init, which runs on
- * Forge in FMLCommonSetupEvent, when Forge takes no more items.
+ * NeoForge in FMLCommonSetupEvent, when NeoForge takes no more items.
  *
  * What stays with the addon are the resources: the item models in
  * assets/smallships_addon/models/item and the item names in the lang files.

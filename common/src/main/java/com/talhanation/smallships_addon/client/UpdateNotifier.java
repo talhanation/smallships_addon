@@ -15,7 +15,7 @@ import net.minecraft.network.chat.HoverEvent;
  *
  * Joining is noticed from the client tick instead of from a login event - there
  * is no such event both loaders share. The tick is hooked in the loader modules
- * (forge ClientForgeBus / fabric client entry point). Kept apart from
+ * (neoforge ClientGameBus / fabric client entry point). Kept apart from
  * {@link UpdateChecker} because this class touches Minecraft, which a dedicated
  * server must never load.
  */

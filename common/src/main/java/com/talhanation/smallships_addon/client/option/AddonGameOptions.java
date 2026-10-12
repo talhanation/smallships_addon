@@ -6,7 +6,7 @@ import org.lwjgl.glfw.GLFW;
 
 /**
  * Key mappings of this addon. They are registered in the loader modules
- * (forge ClientModBus / fabric client entry point) and read in AddonKeyEvent.
+ * (neoforge ClientModBus / fabric client entry point) and read in AddonKeyEvent.
  */
 public class AddonGameOptions {
     // the main mods' category on purpose, so every ship key sits in one block of the controls screen

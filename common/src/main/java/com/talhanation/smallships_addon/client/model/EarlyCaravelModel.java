@@ -16,8 +16,8 @@ import org.jetbrains.annotations.NotNull;
 
 // Hull model exported from Blockbench.
 public class EarlyCaravelModel extends ShipModel<EarlyCaravelEntity> {
-	// register this layer with createBodyLayer() in the loader module (forge ClientModBus / fabric client)
-	public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(new ResourceLocation(SmallShipsAddonMod.MOD_ID, EarlyCaravelEntity.ID + "_model"), "main");
+	// register this layer with createBodyLayer() in the loader module (neoforge ClientModBus / fabric client)
+	public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(ResourceLocation.fromNamespaceAndPath(SmallShipsAddonMod.MOD_ID, EarlyCaravelEntity.ID + "_model"), "main");
 
 	private final ModelPart EarlyCaravel;
 	private final ModelPart bottom;

@@ -52,6 +52,6 @@ public class AddonShipTypes {
     }
 
     private static ResourceLocation id(String path) {
-        return new ResourceLocation(SmallShipsAddonMod.MOD_ID, path);
+        return ResourceLocation.fromNamespaceAndPath(SmallShipsAddonMod.MOD_ID, path);
     }
 }

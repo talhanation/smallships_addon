@@ -12,7 +12,7 @@ import net.minecraft.resources.ResourceLocation;
 
 public class EarlyCaravelMastBannerModel extends MastBannerModel {
     @SuppressWarnings("unused")
-    public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(new ResourceLocation(SmallShipsAddonMod.MOD_ID, EarlyCaravelEntity.ID + "_mast_banner_model"), "main");
+    public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(ResourceLocation.fromNamespaceAndPath(SmallShipsAddonMod.MOD_ID, EarlyCaravelEntity.ID + "_mast_banner_model"), "main");
 
     public EarlyCaravelMastBannerModel() {
         super(createBodyLayer());

@@ -1,4 +1,4 @@
-package com.talhanation.smallships_addon.world.entity.forge;
+package com.talhanation.smallships_addon.world.entity.neoforge;
 
 import com.talhanation.smallships_addon.SmallShipsAddonMod;
 import com.talhanation.smallships_addon.world.entity.ship.EarlyCogEntity;
@@ -6,12 +6,12 @@ import com.talhanation.smallships_addon.world.entity.ship.FishingBoatEntity;
 import com.talhanation.smallships_addon.world.entity.ship.FishingNetEntity;
 import com.talhanation.smallships_addon.world.entity.ship.RowingBoatEntity;
 import com.talhanation.smallships_addon.world.entity.ship.EarlyCaravelEntity;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
-import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.RegistryObject;
+import net.neoforged.neoforge.registries.DeferredHolder;
+import net.neoforged.neoforge.registries.DeferredRegister;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -19,17 +19,17 @@ import java.util.Map;
 /**
  * @ExpectPlatform target for AddonEntityTypes#getEntityType. The class name and
  * the package suffix must match what Architectury expects:
- * <original package>.forge.<original class>Impl
+ * <original package>.neoforge.<original class>Impl
  */
 public class AddonEntityTypesImpl {
-    private static final Map<Class<? extends Entity>, RegistryObject<EntityType<? extends Entity>>> entries = new HashMap<>();
+    private static final Map<Class<? extends Entity>, DeferredHolder<EntityType<?>, EntityType<?>>> entries = new HashMap<>();
 
     @SuppressWarnings("unchecked")
     public static <T extends Entity> EntityType<T> getEntityType(Class<T> entityClass) {
         return (EntityType<T>) entries.get(entityClass).get();
     }
 
-    public static final DeferredRegister<EntityType<?>> ENTITY_TYPES = DeferredRegister.create(ForgeRegistries.ENTITY_TYPES, SmallShipsAddonMod.MOD_ID);
+    public static final DeferredRegister<EntityType<?>> ENTITY_TYPES = DeferredRegister.create(Registries.ENTITY_TYPE, SmallShipsAddonMod.MOD_ID);
 
     static {
         entries.put(EarlyCogEntity.class, ENTITY_TYPES.register(EarlyCogEntity.ID,

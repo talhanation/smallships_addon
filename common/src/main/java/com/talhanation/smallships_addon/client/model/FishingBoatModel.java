@@ -11,7 +11,7 @@ import net.minecraft.resources.ResourceLocation;
 import org.jetbrains.annotations.NotNull;
 
 public class FishingBoatModel extends ShipModel<FishingBoatEntity> {
-	public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(new ResourceLocation(SmallShipsAddonMod.MOD_ID, FishingBoatEntity.ID + "_model"), "main");
+	public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(ResourceLocation.fromNamespaceAndPath(SmallShipsAddonMod.MOD_ID, FishingBoatEntity.ID + "_model"), "main");
 	private final ModelPart FishingBoat;
 	private final ModelPart deck;
 	private final ModelPart cube_r1;

@@ -1,7 +1,7 @@
-package com.talhanation.smallships_addon.update.forge;
+package com.talhanation.smallships_addon.update.neoforge;
 
 import com.talhanation.smallships_addon.SmallShipsAddonMod;
-import net.minecraftforge.fml.ModList;
+import net.neoforged.fml.ModList;
 
 public class UpdateCheckerImpl {
     public static String getModVersion() {

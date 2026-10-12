@@ -12,7 +12,7 @@ import org.jetbrains.annotations.NotNull;
 
 public class EarlyCaravelSailBannerModel extends SailBannerModel {
     @SuppressWarnings("unused")
-    public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(new ResourceLocation(SmallShipsAddonMod.MOD_ID, EarlyCaravelEntity.ID + "_sail_banner_model"), "main");
+    public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(ResourceLocation.fromNamespaceAndPath(SmallShipsAddonMod.MOD_ID, EarlyCaravelEntity.ID + "_sail_banner_model"), "main");
 
     public EarlyCaravelSailBannerModel() {
         super(createBodyLayer());

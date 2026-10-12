@@ -4,7 +4,6 @@ import com.talhanation.smallships.config.SmallShipsConfig;
 import com.talhanation.smallships.world.entity.ship.ContainerShip;
 import com.talhanation.smallships.world.entity.ship.ShipUpgrade;
 import com.talhanation.smallships.world.entity.ship.abilities.Ability;
-import com.talhanation.smallships.world.entity.ship.abilities.Leashable;
 import com.talhanation.smallships.world.entity.ship.abilities.Paddleable;
 import com.talhanation.smallships.world.entity.ship.abilities.Seatable;
 import com.talhanation.smallships.world.entity.ship.hitbox.ShipPartEntity;
@@ -17,7 +16,6 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.vehicle.Boat;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
-import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 import java.util.Map;
@@ -29,7 +27,7 @@ import java.util.Map;
  * A ship class is written exactly like the main mods' own ships: extend Ship or
  * ContainerShip and implement the abilities you want (Sailable, Seatable, ...).
  */
-public class RowingBoatEntity extends ContainerShip implements Seatable, Paddleable, Ability, Leashable {
+public class RowingBoatEntity extends ContainerShip implements Seatable, Paddleable, Ability {
     // registry path of the entity, the items and the dockyard recipe
     public static final String ID = "rowing_boat";
 
@@ -147,10 +145,5 @@ public class RowingBoatEntity extends ContainerShip implements Seatable, Paddlea
     public float getOarFactor() {
         // fraction of max speed reached under oars alone, 1.0 = full speed
         return 1.00F;
-    }
-
-    @Override
-    public @Nullable Vec3 applyLeashOffset() {
-        return new Vec3(0.0, this.getEyeHeight(), this.getBbWidth() * 0.1F);
     }
 }

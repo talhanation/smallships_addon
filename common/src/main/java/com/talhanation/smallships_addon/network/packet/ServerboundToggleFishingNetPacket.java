@@ -3,25 +3,20 @@ package com.talhanation.smallships_addon.network.packet;
 import com.talhanation.smallships.network.ModPacket;
 import com.talhanation.smallships_addon.network.AddonPackets;
 import com.talhanation.smallships_addon.world.entity.ship.FishingBoatEntity;
-import net.minecraft.network.FriendlyByteBuf;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.codec.StreamCodec;
 import net.minecraft.world.entity.player.Player;
+import org.jetbrains.annotations.NotNull;
 
 public record ServerboundToggleFishingNetPacket() implements ModPacket {
-    public static final ResourceLocation ID = AddonPackets.id("server_toggle_fishing_net");
-
-    public static ServerboundToggleFishingNetPacket read(FriendlyByteBuf buf) {
-        return new ServerboundToggleFishingNetPacket();
-    }
-
-    @Override
-    public ResourceLocation id() {
-        return ID;
-    }
+    public static final Type<ServerboundToggleFishingNetPacket> TYPE = new Type<>(AddonPackets.id("server_toggle_fishing_net"));
 
     /** Carries nothing - the press itself is the whole message. */
+    public static final StreamCodec<RegistryFriendlyByteBuf, ServerboundToggleFishingNetPacket> CODEC = StreamCodec.unit(new ServerboundToggleFishingNetPacket());
+
     @Override
-    public void write(FriendlyByteBuf buf) {
+    public @NotNull Type<ServerboundToggleFishingNetPacket> type() {
+        return TYPE;
     }
 
     /**

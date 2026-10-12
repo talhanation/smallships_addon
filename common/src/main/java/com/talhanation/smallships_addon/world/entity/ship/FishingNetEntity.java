@@ -110,13 +110,13 @@ public class FishingNetEntity extends Entity {
     }
 
     @Override
-    protected void defineSynchedData() {
-        this.entityData.define(PARENT_ID, -1);
-        this.entityData.define(LOCAL_V, 0.0F);
-        this.entityData.define(LOCAL_Y, 0.0F);
-        this.entityData.define(LOCAL_H, 0.0F);
-        this.entityData.define(NET_WIDTH, 1.0F);
-        this.entityData.define(NET_HEIGHT, 1.0F);
+    protected void defineSynchedData(SynchedEntityData.@NotNull Builder builder) {
+        builder.define(PARENT_ID, -1);
+        builder.define(LOCAL_V, 0.0F);
+        builder.define(LOCAL_Y, 0.0F);
+        builder.define(LOCAL_H, 0.0F);
+        builder.define(NET_WIDTH, 1.0F);
+        builder.define(NET_HEIGHT, 1.0F);
     }
 
     /**
@@ -169,7 +169,7 @@ public class FishingNetEntity extends Entity {
      * synched data changes, and the boat knows better where its net is.
      */
     @Override
-    public void lerpTo(double x, double y, double z, float yRot, float xRot, int steps, boolean teleport) {
+    public void lerpTo(double x, double y, double z, float yRot, float xRot, int steps) {
     }
 
     @Nullable
@@ -258,7 +258,7 @@ public class FishingNetEntity extends Entity {
                 .withParameter(LootContextParams.TOOL, ItemStack.EMPTY)
                 .withLuck(luck)
                 .create(LootContextParamSets.FISHING);
-        LootTable lootTable = serverLevel.getServer().getLootData().getLootTable(BuiltInLootTables.FISHING);
+        LootTable lootTable = serverLevel.getServer().reloadableRegistries().getLootTable(BuiltInLootTables.FISHING);
         List<ItemStack> list = lootTable.getRandomItems(lootParams);
 
         for (ItemStack itemStack : list) {

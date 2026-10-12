@@ -23,7 +23,7 @@ public class AddonEntityTypes {
     public static void init() {
     }
 
-    // implemented per loader in world/entity/forge and world/entity/fabric
+    // implemented per loader in world/entity/neoforge and world/entity/fabric
     @ExpectPlatform
     public static <T extends Entity> EntityType<T> getEntityType(Class<T> entityClass) {
         throw new AssertionError();

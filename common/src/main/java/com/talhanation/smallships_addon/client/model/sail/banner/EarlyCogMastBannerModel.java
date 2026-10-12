@@ -11,7 +11,7 @@ import net.minecraft.resources.ResourceLocation;
 
 public class EarlyCogMastBannerModel extends MastBannerModel {
     @SuppressWarnings("unused")
-    public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(new ResourceLocation(SmallShipsAddonMod.MOD_ID, EarlyCogEntity.ID + "_mast_banner_model"), "main");
+    public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(ResourceLocation.fromNamespaceAndPath(SmallShipsAddonMod.MOD_ID, EarlyCogEntity.ID + "_mast_banner_model"), "main");
 
     public EarlyCogMastBannerModel() {
         super(createBodyLayer());

@@ -1,5 +1,6 @@
-package com.talhanation.smallships_addon.forge.client;
+package com.talhanation.smallships_addon.neoforge.client;
 
+import com.talhanation.smallships_addon.SmallShipsAddonMod;
 import com.talhanation.smallships_addon.client.AddonClientInitializer;
 import com.talhanation.smallships_addon.client.model.EarlyCogModel;
 import com.talhanation.smallships_addon.client.model.FishingBoatModel;
@@ -12,15 +13,19 @@ import com.talhanation.smallships_addon.client.renderer.entity.FishingNetRendere
 import com.talhanation.smallships_addon.client.renderer.entity.RowingBoatRenderer;
 import com.talhanation.smallships_addon.client.renderer.entity.EarlyCaravelRenderer;
 import com.talhanation.smallships_addon.world.entity.AddonEntityTypes;
-import net.minecraftforge.client.event.EntityRenderersEvent;
-import net.minecraftforge.client.event.RegisterKeyMappingsEvent;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
+import net.neoforged.api.distmarker.Dist;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
+import net.neoforged.neoforge.client.event.EntityRenderersEvent;
+import net.neoforged.neoforge.client.event.RegisterKeyMappingsEvent;
 
+@SuppressWarnings("unused")
+@EventBusSubscriber(modid = SmallShipsAddonMod.MOD_ID, bus = EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public class ClientModBus {
 
     @SubscribeEvent
-    public void onRegisterLayers(EntityRenderersEvent.RegisterLayerDefinitions event) {
+    static void onRegisterLayers(EntityRenderersEvent.RegisterLayerDefinitions event) {
         event.registerLayerDefinition(EarlyCogModel.LAYER_LOCATION, EarlyCogModel::createBodyLayer);
         event.registerLayerDefinition(EarlyCaravelModel.LAYER_LOCATION, EarlyCaravelModel::createBodyLayer);
         event.registerLayerDefinition(RowingBoatModel.LAYER_LOCATION, RowingBoatModel::createBodyLayer);
@@ -28,7 +33,7 @@ public class ClientModBus {
     }
 
     @SubscribeEvent
-    public void onRegisterRenderers(EntityRenderersEvent.RegisterRenderers event) {
+    static void onRegisterRenderers(EntityRenderersEvent.RegisterRenderers event) {
         event.registerEntityRenderer(AddonEntityTypes.EARLY_COG, EarlyCogRenderer::new);
         event.registerEntityRenderer(AddonEntityTypes.EARLY_CARAVEL, EarlyCaravelRenderer::new);
         event.registerEntityRenderer(AddonEntityTypes.ROWING_BOAT, RowingBoatRenderer::new);
@@ -38,12 +43,12 @@ public class ClientModBus {
     }
 
     @SubscribeEvent
-    public void onRegisterKeyMappings(RegisterKeyMappingsEvent event) {
+    static void onRegisterKeyMappings(RegisterKeyMappingsEvent event) {
         event.register(AddonGameOptions.NET_KEY);
     }
 
     @SubscribeEvent
-    public void onClientSetup(FMLClientSetupEvent event) {
+    static void onClientSetup(FMLClientSetupEvent event) {
         event.enqueueWork(AddonClientInitializer::init);
     }
 }

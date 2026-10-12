@@ -13,6 +13,7 @@ import com.talhanation.smallships_addon.client.renderer.entity.FishingBoatRender
 import com.talhanation.smallships_addon.client.renderer.entity.FishingNetRenderer;
 import com.talhanation.smallships_addon.client.renderer.entity.RowingBoatRenderer;
 import com.talhanation.smallships_addon.client.renderer.entity.EarlyCaravelRenderer;
+import com.talhanation.smallships_addon.network.fabric.AddonPacketsImpl;
 import com.talhanation.smallships_addon.world.entity.AddonEntityTypes;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
@@ -43,5 +44,7 @@ public class SmallShipsAddonFabricClient implements ClientModInitializer {
 
         ClientTickEvents.END_CLIENT_TICK.register(AddonKeyEvent::onKeyInput);
         ClientTickEvents.END_CLIENT_TICK.register(UpdateNotifier::tick);
+
+        AddonPacketsImpl.registerClientReceivers();
     }
 }

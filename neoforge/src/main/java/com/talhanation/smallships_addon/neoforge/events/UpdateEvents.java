@@ -1,8 +1,8 @@
-package com.talhanation.smallships_addon.forge.events;
+package com.talhanation.smallships_addon.neoforge.events;
 
 import com.talhanation.smallships_addon.update.UpdateChecker;
-import net.minecraftforge.event.server.ServerStartedEvent;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.neoforge.event.server.ServerStartedEvent;
 
 /**
  * Tells the update checker that the server is up. Only from here on the server

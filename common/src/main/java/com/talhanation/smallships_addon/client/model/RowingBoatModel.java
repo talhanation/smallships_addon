@@ -13,8 +13,8 @@ import org.jetbrains.annotations.NotNull;
 
 // Hull model exported from Blockbench.
 public class RowingBoatModel extends ShipModel<RowingBoatEntity> {
-	// register this layer with createBodyLayer() in the loader module (forge ClientModBus / fabric client)
-	public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(new ResourceLocation(SmallShipsAddonMod.MOD_ID, RowingBoatEntity.ID + "_model"), "main");
+	// register this layer with createBodyLayer() in the loader module (neoforge ClientModBus / fabric client)
+	public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(ResourceLocation.fromNamespaceAndPath(SmallShipsAddonMod.MOD_ID, RowingBoatEntity.ID + "_model"), "main");
 	private final ModelPart RowningBoat;
 	private final ModelPart deck;
 	private final ModelPart cube_r1;

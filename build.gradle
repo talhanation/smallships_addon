@@ -1,6 +1,7 @@
 plugins {
-    id "architectury-plugin" version "3.4-SNAPSHOT"
-    id "dev.architectury.loom" version "1.2-SNAPSHOT" apply false
+    id "architectury-plugin" version "3.4.164"
+    id "dev.architectury.loom" version "1.7.435" apply false
+    id "com.github.johnrengelman.shadow" version "8.1.1" apply false
 }
 
 architectury {
@@ -55,10 +56,13 @@ allprojects {
     tasks.withType(JavaCompile) {
         options.encoding = "UTF-8"
         //noinspection GroovyAccessibility
-        options.release = 17
+        options.release = 21
     }
 
     java {
         withSourcesJar()
+
+        sourceCompatibility = JavaVersion.VERSION_21
+        targetCompatibility = JavaVersion.VERSION_21
     }
 }

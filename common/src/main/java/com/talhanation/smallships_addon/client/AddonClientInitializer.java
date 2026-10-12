@@ -15,7 +15,7 @@ import com.talhanation.smallships_addon.world.entity.ship.FishingBoatEntity;
  * without it (the Rowing Boat has no sail).
  *
  * Entity renderers and model layers are registered in the loader modules
- * (forge ClientModBus / fabric client entry point), not here.
+ * (neoforge ClientModBus / fabric client entry point), not here.
  */
 public class AddonClientInitializer {
     public static void init() {

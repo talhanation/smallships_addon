@@ -15,7 +15,7 @@ import net.minecraft.resources.ResourceLocation;
 import org.jetbrains.annotations.NotNull;
 
 public class FishingBoatSailModel extends SailModel {
-	public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(new ResourceLocation(SmallShipsAddonMod.MOD_ID, FishingBoatEntity.ID + "_sail_model"), "main");
+	public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(ResourceLocation.fromNamespaceAndPath(SmallShipsAddonMod.MOD_ID, FishingBoatEntity.ID + "_sail_model"), "main");
 
 	private final ModelPart FishingBoatSail;
 	private final ModelPart sail_rope_0;
@@ -330,7 +330,7 @@ public class FishingBoatSailModel extends SailModel {
 
 
 	@Override
-	public void renderToBuffer(PoseStack poseStack, VertexConsumer vertexConsumer, int packedLight, int packedOverlay, float red, float green, float blue, float alpha) {
-		FishingBoatSail.render(poseStack, vertexConsumer, packedLight, packedOverlay);
+	public void renderToBuffer(PoseStack poseStack, VertexConsumer vertexConsumer, int packedLight, int packedOverlay, int color) {
+		FishingBoatSail.render(poseStack, vertexConsumer, packedLight, packedOverlay, color);
 	}
 }

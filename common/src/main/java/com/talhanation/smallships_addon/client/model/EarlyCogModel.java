@@ -17,8 +17,8 @@ import org.jetbrains.annotations.NotNull;
 
 // Hull model exported from Blockbench.
 public class EarlyCogModel extends ShipModel<EarlyCogEntity> {
-	// register this layer with createBodyLayer() in the loader module (forge ClientModBus / fabric client)
-	public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(new ResourceLocation(SmallShipsAddonMod.MOD_ID, EarlyCogEntity.ID + "_model"), "main");
+	// register this layer with createBodyLayer() in the loader module (neoforge ClientModBus / fabric client)
+	public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(ResourceLocation.fromNamespaceAndPath(SmallShipsAddonMod.MOD_ID, EarlyCogEntity.ID + "_model"), "main");
 
 	private final ModelPart EarlyCog;
 	private final ModelPart deck;

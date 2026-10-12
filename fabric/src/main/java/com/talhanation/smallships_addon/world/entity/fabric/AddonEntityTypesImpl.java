@@ -30,7 +30,7 @@ public class AddonEntityTypesImpl {
     }
 
     private static <T extends Entity> EntityType<T> register(String id, EntityType<T> type) {
-        return Registry.register(BuiltInRegistries.ENTITY_TYPE, new ResourceLocation(SmallShipsAddonMod.MOD_ID, id), type);
+        return Registry.register(BuiltInRegistries.ENTITY_TYPE, ResourceLocation.fromNamespaceAndPath(SmallShipsAddonMod.MOD_ID, id), type);
     }
 
     static {

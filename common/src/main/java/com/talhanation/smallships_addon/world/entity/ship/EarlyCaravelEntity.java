@@ -14,7 +14,6 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.vehicle.Boat;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
-import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 import java.util.Map;
@@ -26,7 +25,7 @@ import java.util.Map;
  * A ship class is written exactly like the main mods' own ships: extend Ship or
  * ContainerShip and implement the abilities you want (Sailable, Seatable, ...).
  */
-public class EarlyCaravelEntity extends ContainerShip implements Bannerable, Sailable, Seatable, Ability, Leashable {
+public class EarlyCaravelEntity extends ContainerShip implements Bannerable, Sailable, Seatable, Ability {
     // registry path of the entity, the items and the dockyard recipe
     public static final String ID = "early_caravel";
 
@@ -119,12 +118,6 @@ public class EarlyCaravelEntity extends ContainerShip implements Bannerable, Sai
         return false;
     }
 
-    /* ---------------- Leash ---------------- */
-
-    @Override
-    public @Nullable Vec3 applyLeashOffset() {
-        return new Vec3(0.0, this.getEyeHeight(), this.getBbWidth() * 0.1F);
-    }
     /* ---------------- water partociles ---------------- */
     @Override
     public void waterSplash() {

@@ -20,7 +20,7 @@ import org.jetbrains.annotations.NotNull;
 // Sail model exported from Blockbench, registered in AddonClientInitializer.
 // It bakes its own root in the constructor, so it needs no layer registration.
 public class EarlyCaravelSailModel extends SailModel {
-	public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(new ResourceLocation(SmallShipsAddonMod.MOD_ID, EarlyCaravelEntity.ID + "_sail_model"), "main");
+	public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(ResourceLocation.fromNamespaceAndPath(SmallShipsAddonMod.MOD_ID, EarlyCaravelEntity.ID + "_sail_model"), "main");
 
 	private final ModelPart EarlyCaravelSail;
 	private final ModelPart sail_1;
@@ -495,7 +495,7 @@ public class EarlyCaravelSailModel extends SailModel {
 
 
 	@Override
-	public void renderToBuffer(PoseStack poseStack, VertexConsumer vertexConsumer, int packedLight, int packedOverlay, float red, float green, float blue, float alpha) {
-		EarlyCaravelSail.render(poseStack, vertexConsumer, packedLight, packedOverlay);
+	public void renderToBuffer(PoseStack poseStack, VertexConsumer vertexConsumer, int packedLight, int packedOverlay, int color) {
+		EarlyCaravelSail.render(poseStack, vertexConsumer, packedLight, packedOverlay, color);
 	}
 }

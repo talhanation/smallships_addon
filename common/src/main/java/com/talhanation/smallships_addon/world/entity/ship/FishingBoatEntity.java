@@ -4,7 +4,6 @@ import com.talhanation.smallships.config.SmallShipsConfig;
 import com.talhanation.smallships.world.entity.ship.ContainerShip;
 import com.talhanation.smallships.world.entity.ship.ShipUpgrade;
 import com.talhanation.smallships.world.entity.ship.abilities.Ability;
-import com.talhanation.smallships.world.entity.ship.abilities.Leashable;
 import com.talhanation.smallships.world.entity.ship.abilities.Sailable;
 import com.talhanation.smallships.world.entity.ship.abilities.Seatable;
 import com.talhanation.smallships.world.entity.ship.hitbox.ShipPartEntity;
@@ -43,7 +42,7 @@ import java.util.Map;
  * alive that does the catching. The net only stays out while someone is
  * aboard to work it, see hasNetCrew.
  */
-public class FishingBoatEntity extends ContainerShip implements Sailable, Seatable, Ability, Leashable {
+public class FishingBoatEntity extends ContainerShip implements Sailable, Seatable, Ability {
     // registry path of the entity, the items and the dockyard recipe
     public static final String ID = "fishing_boat";
 
@@ -95,9 +94,9 @@ public class FishingBoatEntity extends ContainerShip implements Sailable, Seatab
     }
 
     @Override
-    protected void defineSynchedData() {
-        super.defineSynchedData();
-        this.entityData.define(NET_OUT, false);
+    protected void defineSynchedData(SynchedEntityData.@NotNull Builder builder) {
+        super.defineSynchedData(builder);
+        builder.define(NET_OUT, false);
     }
 
     @Override
@@ -303,7 +302,7 @@ public class FishingBoatEntity extends ContainerShip implements Sailable, Seatab
 
         for (int i = 0; i < this.getContainerSize() && !rest.isEmpty(); i++) {
             ItemStack slot = this.getItem(i);
-            if (slot.isEmpty() || !ItemStack.isSameItemSameTags(slot, rest)) continue;
+            if (slot.isEmpty() || !ItemStack.isSameItemSameComponents(slot, rest)) continue;
 
             int space = Math.min(slot.getMaxStackSize(), this.getMaxStackSize()) - slot.getCount();
             if (space <= 0) continue;
@@ -329,13 +328,6 @@ public class FishingBoatEntity extends ContainerShip implements Sailable, Seatab
             if (itemStack.isEmpty()) return true;
         }
         return false;
-    }
-
-    /* ---------------- Leash ---------------- */
-
-    @Override
-    public @Nullable Vec3 applyLeashOffset() {
-        return new Vec3(0.0, this.getEyeHeight(), this.getBbWidth() * 0.1F);
     }
 
     /* ---------------- water particles ---------------- */

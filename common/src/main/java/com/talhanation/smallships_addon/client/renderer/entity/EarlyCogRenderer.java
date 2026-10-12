@@ -30,7 +30,7 @@ public class EarlyCogRenderer extends ShipRenderer<EarlyCogEntity> {
     @Override
     protected ResourceLocation getTextureLocation(Boat.Type type) {
         // reuses the main mods' hull textures - use SmallShipsAddon.MOD_ID to ship your own
-        return new ResourceLocation(SmallShipsMod.MOD_ID, "textures/entity/ship/" + ShipRenderer.getNameFromType(type) + ".png");
+        return ResourceLocation.fromNamespaceAndPath(SmallShipsMod.MOD_ID, "textures/entity/ship/" + ShipRenderer.getNameFromType(type) + ".png");
     }
 
     @Override

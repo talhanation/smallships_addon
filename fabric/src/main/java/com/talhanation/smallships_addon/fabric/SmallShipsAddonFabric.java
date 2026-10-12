@@ -1,6 +1,7 @@
 package com.talhanation.smallships_addon.fabric;
 
 import com.talhanation.smallships_addon.SmallShipsAddonMod;
+import com.talhanation.smallships_addon.network.fabric.AddonPacketsImpl;
 import com.talhanation.smallships_addon.world.item.AddonItems;
 
 import com.talhanation.smallships_addon.update.UpdateChecker;
@@ -22,6 +23,8 @@ public class SmallShipsAddonFabric implements ModInitializer {
         new SmallShipsAddonMod();
         AddonItems.register();
         SmallShipsAddonMod.init();
+        // after init: the packets are only known once AddonPackets#registerPackets ran
+        AddonPacketsImpl.registerServerReceivers();
 
         // update check: the server config is only loaded once the server is up
         ServerLifecycleEvents.SERVER_STARTED.register(server -> UpdateChecker.onServerStarted());
