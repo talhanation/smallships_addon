@@ -40,6 +40,14 @@
   "item.smallships_addon.bamboo_early_caravel": "Bamboo Early Caravel",
   "item.smallships_addon.bamboo_rowing_boat": "Bamboo Rowing Boat",
   "item.smallships_addon.bamboo_fishing_boat": "Bamboo Fishing Boat",
+  "item.smallships_addon.warped_early_cog": "Warped Early Cog",
+  "item.smallships_addon.warped_early_caravel": "Warped Early Caravel",
+  "item.smallships_addon.warped_rowing_boat": "Warped Rowing Boat",
+  "item.smallships_addon.warped_fishing_boat": "Warped Fishing Boat",
+  "item.smallships_addon.crimson_early_cog": "Crimson Early Cog",
+  "item.smallships_addon.crimson_early_caravel": "Crimson Early Caravel",
+  "item.smallships_addon.crimson_rowing_boat": "Crimson Rowing Boat",
+  "item.smallships_addon.crimson_fishing_boat": "Crimson Fishing Boat",
 
 
   "gui.smallships.dockyard.about.smallships_addon.early_cog": "The early cog is a single-masted sailing ship. A tail wind gives it a strong speed bonus, a side wind a small one. Up to six shields can be hung along its sides, three on each side, and every shield reduces the damage the ship takes. It sails faster in cold waters.",
