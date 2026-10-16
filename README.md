@@ -262,4 +262,8 @@ The addon has its own update checker. It works the same on every loader and does
 
 ## License
 
-All Rights Reserved.
+All Rights Reserved, with one exception:
+
+You may use the code of this project as a template for your own Small Ships addon. You can copy it, change it and publish the result as your own mod under a license of your choice.
+
+This permission does not cover the assets of this addon (models, textures, item icons, icon.png). It also doesn't allow re-uploading this addon or its ships unchanged, or presenting your addon as an official Small Ships addon. A link back to this repository is appreciated
